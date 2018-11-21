@@ -15,8 +15,7 @@
         <div class="col-sm">
           <h3>UML Code
           <div class="btn-group float-right" role="group" aria-label="Informational Links">
-            <a role="button" class="btn btn-secondary btn-sm" id="page_link" href="javascript:void(0);" target="_blank"
-            data-toggle="tooltip" title="Right-click and copy a short URL to the current diagram">Share Link</a>
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#linkModal">Share Link</button>
             <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#infoModal">?</button>
           </div>
           </h3>
@@ -61,7 +60,31 @@ end
         </div>
       </div>
     </div>
-    <!-- Modal -->
+
+    <!-- Short Link Modal -->
+    <div class="modal fade" id="linkModal" tabindex="-1" role="dialog" aria-labelledby="linkModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="infoModalLabel">Share Link</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Right click or copy the short link below to return to the website with current UML code saved.
+            </p>
+            <div class="alert alert-secondary" role="alert">
+              <pre><a id="page_link" class="alert-link" href="javascript:void(0);" target="_blank"></a></pre>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Modal -->
     <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">

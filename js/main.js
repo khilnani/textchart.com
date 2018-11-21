@@ -36,7 +36,6 @@ function refresh_uml() {
     }
     // Create the link with UML encoded
     var new_hash = '#' + b64_uml;
-    var page_link = page_url + new_hash
 
     // Update the browser url/location
     if(history.pushState) {
@@ -45,27 +44,38 @@ function refresh_uml() {
         location.hash = new_hash;
     }
 
+}
+
+function clear_share_link() {
+        $('#page_link').attr('href', 'javascript:void(0); return false;');
+        $('#page_link').text('Updating ...');
+}
+
+function update_share_link() {
     // Create a short URL
     var jqxhr = $.ajax({
         type: 'GET',
         url: "https://khl.io/?url=" + page_link
     })
     jqxhr.done(function( data ) {
-        //console.log('response_text')
-        //console.log(data);
+        console.log('Short URL: response_text')
+        console.log(data);
         var short_url = data['short_url'];
-        console.log('short_url: ' + short_url);
+        console.log('Short URL: ' + short_url);
         // Use the short error
         $('#page_link').attr('href', short_url);
+        $('#page_link').text(short_url);
     });
     jqxhr.fail(function (e) {
-        console.log('Ajax ERROR');
+        console.log('Short URL: Ajax ERROR');
         console.log(e);
         // Use the page link if we hit an error
         $('#page_link').attr('href', page_link);
-    });
+        $('#page_link').text(page_link);
 
+    });
 }
+
 
 function read_window_hash() {
     if(window.location.hash) {
@@ -76,6 +86,7 @@ function read_window_hash() {
         try {
             var uml = b64DecodeUnicode(hash);
             $('#code').val(uml);
+            $('#code').trigger('input');
         }
         catch(e) {
             console.log('WARN');
@@ -84,20 +95,29 @@ function read_window_hash() {
     }
 }
 
+
 $(function() {
 
     // Enable tooltips
     $('[data-toggle="tooltip"]').tooltip();
 
     // Monitor the UML TextArea
-    $('#code').bind('input', function() {
+    $('#code').on('input', function() {
         refresh_uml();
     });
 
     // Setup forward/back history handling
-    $(window).bind('popstate', function(event) {
+    $(window).on('popstate', function(event) {
         console.log('Window History movement')
         read_window_hash();
+    });
+
+    // Update the share link when the modal is displayed
+    $('#linkModal').on('show.bs.modal', function () {
+        clear_share_link();
+    });
+    $('#linkModal').on('shown.bs.modal', function () {
+        update_share_link();
     });
 
     // Update based on prior state in the URL
