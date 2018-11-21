@@ -1,0 +1,12 @@
+html, body, .container, .container-fluid, .row, .col-sm {
+  height: 100%;
+}
+
+#code.form-control {
+    height: 80%;
+    width: 100%;
+
+    background-color: #eeeeee;
+    font-size: 0.76em;
+    font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+}

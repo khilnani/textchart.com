@@ -2,22 +2,32 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="css/main.css"/>
 
     <title>UML.ide</title>
   </head>
   <body>
 
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-sm">
-            <div>UML Code</div>
-            <div>
-                <textarea id="code" name="code" rows="25" cols="45">
+
+            <h3>PlantUML Code
+
+                <a role="button" class="float-right btn btn-secondary btn-sm" id="page_link" href="javascript:void(0);" target="_blank">Link</a>
+
+            </h3>
+
+            <textarea
+                id="code" name="code"
+                class="form-control collapse show"
+                aria-label="With textarea">
 @startuml
 
 actor User
@@ -45,12 +55,19 @@ opt Login Success
 end
 
 @enduml
-                </textarea>
-            </div>
+            </textarea>
+
         </div>
         <div class="col-sm">
-            Output
-            <div id="output">
+
+            <h3>Diagram
+
+                <a role="button" class="float-right btn btn-secondary btn-sm" id="uml_link" href="javascript:void(0);" target="_blank">View ASCII</a>
+
+            </h3>
+
+            <div class="alert alert-light" role="alert">
+                <img id="uml_img" src='' class="mw-100"/>
             </div>
         </div>
       </div>
@@ -59,19 +76,14 @@ end
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script>
 
-var url = 'http://www.plantuml.com/plantuml/img/'
-
-$(function() {
-  $('#code').bind('input', function() {
-    $("#output").html("Hello World");
-  });
-});
-
-    </script>
+    <script src="js/rawdeflate.js"></script>
+    <script src="js/plantuml.js"></script>
+    <script src="js/main.js"></script>
 
     </script>
   </body>
