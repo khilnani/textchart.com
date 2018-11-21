@@ -22,7 +22,11 @@ function refresh_uml() {
     var uml = $('#code').val();
 
     // Update the Plant UML diagram
-    update_plantuml_diagram(uml);
+    var puml = uml;
+    if( uml.toLowerCase().indexOf('skinparam monochrome') == -1) {
+        puml = 'skinparam monochrome true\n\n' +uml;
+    }
+    update_plantuml_diagram(puml);
 
     // Updater mermaid
     display_mermaid(uml);
