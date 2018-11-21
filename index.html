@@ -23,8 +23,6 @@
           id="code" name="code"
           class="form-control collapse show"
           aria-label="With textarea">
-@startuml
-
 participant User
 participant App
 participant API
@@ -50,9 +48,7 @@ opt Login Success
   API ->> App: Return content
   App ->> User: Display content
 end
-
-@enduml
-          </textarea>
+</textarea>
         </div>
         <div class="col-sm">
           <h3>Diagram
@@ -80,7 +76,7 @@ end
             <p>To learn more please take a look at <a href="http://plantuml.com" target="_blank">http://plantuml.com</a>.
             <p>Code for this website is located at <a href="https://github.com/khilnani/uml.ide" target="_blank">github.com/khilnani/uml.ide</a>.
             </p>
-            <p><a href="http://sequencediagram.org" target="_blank">http://sequencediagram.org</a> is a good alternative but does not support ASCII output and is not open source.
+            <p><a href="http://sequencediagram.org" target="_blank">http://sequencediagram.org</a> is a good alternative that supports a subset of PlantUML. However, it does not support ASCII output and is not open source.
             </p>
         </div>
         <div class="modal-footer">
