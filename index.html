@@ -23,30 +23,35 @@
           id="code" name="code"
           class="form-control collapse show"
           aria-label="With textarea">
-          @startuml
-          participant User
-          participant App
-          participant API
-          participant DB
-          User ->> App: Request page
-          App -->> User: Display Page
-          User ->> App: Login
-          App ->> API: Validate
-          API ->> DB: Query Hash
-          DB ->> API: Return result
-          opt Login Failure
-          API ->> App: Login Failure
-          App ->> User: Display Login Error
-          end
-          opt Login Success
-          API ->> App: Login Success
-          App ->> API: Get User's content
-          API ->> DB: Get Content
-          DB ->> API: Return Content
-          API ->> App: Return content
-          App ->> User: Display content
-          end
-          @enduml
+@startuml
+
+participant User
+participant App
+participant API
+participant DB
+
+User ->> App: Request page
+App -->> User: Display Page
+User ->> App: Login
+App ->> API: Validate
+API ->> DB: Query Hash
+DB ->> API: Return result
+
+opt Login Failure
+  API ->> App: Login Failure
+  App ->> User: Display Login Error
+end
+
+opt Login Success
+  API ->> App: Login Success
+  App ->> API: Get User's content
+  API ->> DB: Get Content
+  DB ->> API: Return Content
+  API ->> App: Return content
+  App ->> User: Display content
+end
+
+@enduml
           </textarea>
         </div>
         <div class="col-sm">
