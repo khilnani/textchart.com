@@ -64,8 +64,8 @@ function done_deflating(e) {
 
     console.log('done_deflating: ' + data);
 
-    $('#uml_img').attr('src', "http://www.plantuml.com/plantuml/img/"+data);
-    $('#uml_link').attr('href', "http://www.plantuml.com/plantuml/txt/"+data);
+    $('#uml_img').attr('src', "https://www.plantuml.com/plantuml/img/"+data);
+    $('#uml_link').attr('href', "https://www.plantuml.com/plantuml/txt/"+data);
 
 }
 
