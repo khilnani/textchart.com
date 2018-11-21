@@ -1,6 +1,12 @@
 # uml.ide
 
-Links
+> A simple web editor for plantuML thats mobile friendly
+
+To learn more about PlantUML, check out:
+
+- http://plantuml.com/
+
+## Dev Notes
 
 - http://plantuml.com/code-javascript-asynchronous
 - http://getbootstrap.com/docs/4.1/
