@@ -12,3 +12,4 @@ To learn more about PlantUML, check out:
 - http://plantuml.com/code-javascript-asynchronous
 - http://getbootstrap.com/docs/4.1/
 - https://github.com/johan/js-deflate
+- https://github.com/imaya/zopfli.js
