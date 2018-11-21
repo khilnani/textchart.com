@@ -24,6 +24,9 @@ function refresh_uml() {
     // Update the Plant UML diagram
     update_plantuml_diagram(uml);
 
+    // Updater mermaid
+    display_mermaid(uml);
+
     // Base64 UML for Linking
     var b64_uml = b64EncodeUnicode(uml);
     console.log('UML Base64: ' + b64_uml);
@@ -97,6 +100,9 @@ function read_window_hash() {
 
 
 $(function() {
+
+    // Init
+    init_mermaid();
 
     // Enable tooltips
     $('[data-toggle="tooltip"]').tooltip();
