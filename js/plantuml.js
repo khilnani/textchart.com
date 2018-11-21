@@ -50,13 +50,20 @@ function encode6bit(b) {
     return '?';
 }
 
-var deflater = window.SharedWorker && new SharedWorker(deflate_script);
-if (deflater) {
-    deflater.port.addEventListener('message', done_deflating, false);
-    deflater.port.start();
-} else if (window.Worker) {
-    deflater = new Worker(deflate_script);
-    deflater.onmessage = done_deflating;
+var deflater = undefined;
+try {
+    deflater = window.SharedWorker && new SharedWorker(deflate_script);
+
+    if (deflater) {
+        deflater.port.addEventListener('message', done_deflating, false);
+        deflater.port.start();
+    } else if (window.Worker) {
+        deflater = new Worker(deflate_script);
+        deflater.onmessage = done_deflating;
+    }
+} catch(e) {
+    console.log('WARN');
+    console.log(e);
 }
 
 function done_deflating(e) {

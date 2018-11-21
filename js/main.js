@@ -15,7 +15,7 @@ function b64DecodeUnicode(str) {
     }).join(''));
 }
 
-function invoke_uml_change() {
+function refresh_uml() {
     console.log('UML Changed');
 
     var uml = $('#code').val();
@@ -29,12 +29,12 @@ function invoke_uml_change() {
     if (hash_index > -1) {
         page_url = page_url.slice(0, hash_index);
     }
-    
+
     var new_hash = '#' + b64_uml;
     $('#page_link').attr('href', page_url + new_hash);
-    
+
     if(history.pushState) {
-        history.pushState(null, null, new_hash);
+        history.pushState(null, 'null', new_hash);
     } else {
         location.hash = new_hash;
     }
@@ -42,12 +42,7 @@ function invoke_uml_change() {
     compress(uml);
 }
 
-
-$(function() {
-    $('#code').bind('input', function() {
-        invoke_uml_change();
-    });
-
+function read_window_hash() {
     if(window.location.hash) {
         var hash = window.location.hash;
         hash = hash.slice(1);
@@ -58,10 +53,24 @@ $(function() {
             $('#code').val(uml);
         }
         catch(e) {
+            console.log('WARN');
             console.log('Unable to decode hash: ' + hash);
         }
     }
+}
 
-    invoke_uml_change();
+$(function() {
 
+    $('#code').bind('input', function() {
+        refresh_uml();
+    });
+
+    $(window).bind('popstate', function(event) {
+        console.log('Window History movement')
+        read_window_hash();
+    });
+
+    read_window_hash();
+
+    refresh_uml();
 });
