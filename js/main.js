@@ -54,11 +54,8 @@ function clear_share_link() {
 function update_share_link() {
     // Create a short URL
     var jqxhr = $.ajax({
-        type: 'POST',
-        url: "https://khl.io/",
-        data: {
-            url: window.location.href
-        }
+        type: 'GET',
+        url: "https://khl.io/?url=" + encodeURIComponent(window.location.href)
     })
     jqxhr.done(function( data ) {
         console.log('Short URL: response_text')
