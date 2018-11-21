@@ -69,7 +69,7 @@ try {
 function done_deflating(e) {
     var data = encode64(e.data);
 
-    console.log('done_deflating: ' + data);
+    console.log('Updating diagram with: ' + data);
 
     $('#uml_img').attr('src', "https://www.plantuml.com/plantuml/img/"+data);
     $('#uml_link').attr('href', "https://www.plantuml.com/plantuml/txt/"+data);
@@ -91,4 +91,8 @@ function compress(s) {
             done_deflating({ data: deflate(s) });
         }, 100);
     }
+}
+
+function update_plantuml_diagram(s) {
+    compress(s);
 }

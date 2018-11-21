@@ -15,7 +15,8 @@
         <div class="col-sm">
           <h3>UML Code
           <div class="btn-group float-right" role="group" aria-label="Informational Links">
-            <a role="button" class="btn btn-secondary btn-sm" id="page_link" href="javascript:void(0);" target="_blank">Link</a>
+            <a role="button" class="btn btn-secondary btn-sm" id="page_link" href="javascript:void(0);" target="_blank"
+            data-toggle="tooltip" title="Right-click and copy a short URL to the current diagram">Share Link</a>
             <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#infoModal">?</button>
           </div>
           </h3>
@@ -52,7 +53,7 @@ end
         </div>
         <div class="col-sm">
           <h3>Diagram
-          <a role="button" class="float-right btn btn-secondary btn-sm" id="uml_link" href="javascript:void(0);" target="_blank">View ASCII</a>
+          <a role="button" class="float-right btn btn-secondary btn-sm" id="uml_link" href="javascript:void(0);" target="_blank" data-toggle="tooltip" title="View an ASCII text version of the diagram">View ASCII</a>
           </h3>
           <div class="alert alert-light" role="alert">
             <img id="uml_img" src='' class="mw-100"/>
@@ -86,7 +87,9 @@ end
     </div>
   </div>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/rawdeflate.js"></script>
