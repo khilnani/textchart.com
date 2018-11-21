@@ -61,31 +61,8 @@ end
       </div>
     </div>
 
-    <!-- Short Link Modal -->
-    <div class="modal fade" id="linkModal" tabindex="-1" role="dialog" aria-labelledby="linkModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="infoModalLabel">Share Link</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Right click or copy the short link below to return to the website with current UML code saved.
-            </p>
-            <div class="alert alert-secondary" role="alert">
-              <pre><a id="page_link" class="alert-link" href="javascript:void(0);" target="_blank"></a></pre>
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-
     <!-- Info Modal -->
-    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal fade" id="infoModal" tabindex="-2" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -98,10 +75,35 @@ end
             <p>This website uses the PlantUML format of text based UML definition. Thanks to the PlantUML folks for making the processing server and code available!
             </p>
             <p>To learn more please take a look at <a href="http://plantuml.com" target="_blank">http://plantuml.com</a>.
+            </p>
             <p>Code for this website is located at <a href="https://github.com/khilnani/uml.ide" target="_blank">github.com/khilnani/uml.ide</a>.
             </p>
             <p><a href="http://sequencediagram.org" target="_blank">http://sequencediagram.org</a> is a good alternative that supports a subset of PlantUML. However, it does not support ASCII output and is not open source.
             </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Short Link Modal -->
+  <div class="modal fade" id="linkModal" tabindex="-1" role="dialog" aria-labelledby="linkModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="linkModalLabel">Share Link</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Right click or copy the short link below to return to the website with current UML code saved.
+          </p>
+          <div class="alert alert-secondary" role="alert">
+            <pre><a id="page_link" class="alert-link" href="javascript:void(0);" target="_blank"></a></pre>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
