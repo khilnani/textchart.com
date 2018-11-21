@@ -29,7 +29,15 @@ function invoke_uml_change() {
     if (hash_index > -1) {
         page_url = page_url.slice(0, hash_index);
     }
-    $('#page_link').attr('href', page_url + '#' + b64_uml);
+    
+    var new_hash = '#' + b64_uml;
+    $('#page_link').attr('href', page_url + new_hash);
+    
+    if(history.pushState) {
+        history.pushState(null, null, new_hash);
+    } else {
+        location.hash = new_hash;
+    }
 
     compress(uml);
 }
