@@ -5,6 +5,7 @@
 To learn more about PlantUML, check out:
 
 - http://plantuml.com/
+- https://github.com/plantuml/plantuml-server
 
 ## Dev Notes
 
