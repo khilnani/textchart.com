@@ -30,10 +30,10 @@
                 aria-label="With textarea">
 @startuml
 
-actor User
+participant User
 participant App
 participant API
-database DB
+participant DB
 
 User ->> App: Request page
 App -->> User: Display Page
