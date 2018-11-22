@@ -4,6 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/main.css"/>
@@ -12,7 +14,7 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm">
+        <div class="col-xs-6 col-sm-5">
           <h3>UML
           <div class="btn-group float-right" role="group" aria-label="Informational Links">
 
@@ -26,8 +28,8 @@
                 </label>
               </div>
 
-            <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#linkModal">Share</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#infoModal">?</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#linkModal"><i class="fas fa-share"></i></button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#infoModal"><i class="fas fa-info-circle"></i></button>
           </div>
           </h3>
           <textarea
@@ -62,7 +64,7 @@ end
 </textarea>
         </div>
 
-        <div class="col-sm">
+        <div class="col-xs-6 col-sm-7">
           <h3>Diagram
 
             <div class="btn-group float-right" role="group" aria-label="Diagram Links">
@@ -72,7 +74,7 @@ end
 
           <div class="card">
             <div id="diagram-plantuml" class="card-body" role="alert">
-              <img id="uml_img" src='' class="w-100"/>
+              <img id="uml_img" src='' class="mw-100"/>
             </div>
 
             <div id="diagram-mermaid" class="card-body d-none" role="alert">
