@@ -27,7 +27,9 @@ function display_mermaid(uml) {
 
     mermaid.init(undefined, $("#mermaid"));
 
-    $('#mermaid').removeAttr('data-processed');
+    window.setTimeout(function () {
+        $('#mermaid').removeAttr('data-processed');
+    }, 1000);
 
     console.log('Mermaid: Updated');
 
