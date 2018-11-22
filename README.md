@@ -1,4 +1,4 @@
-# uml.ide
+# textchart.com
 
 > A simple mobile first UML text editor for both PlantUML and Mermaid.js
 
