@@ -152,7 +152,7 @@ $(function() {
     });
 
     // Display PlantUML or Mermaid based on localstorage
-    console.log('Diagram [localstorage]', localStorage.getItem("diagram"))
+    console.log('Diagram [localstorage]', localStorage.getItem("diagram"));
     if( localStorage.getItem("diagram") == 'mermaid') {
         set_diagram_mermaid()
     } else {

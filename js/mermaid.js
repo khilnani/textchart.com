@@ -22,7 +22,7 @@ function display_mermaid(uml) {
 
     uml = uml.trim();
 
-    if(uml.indexof('sequenceDiagram') != 0 && 
+    if(uml.indexOf('sequenceDiagram') != 0 && 
             uml.indexOf('graph') != 0 && 
            uml.indexOf('gantt') != 0) {
         uml = 'sequenceDiagram\n' + uml;
