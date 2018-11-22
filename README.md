@@ -1,6 +1,6 @@
 # uml.ide
 
-> A simple mobile first web editor for both PlantUML and Mermaid.js
+> A simple mobile first UML text editor for both PlantUML and Mermaid.js
 
 To learn more about PlantUML, check out:
 
