@@ -62,17 +62,29 @@ try {
         deflater.onmessage = done_deflating;
     }
 } catch(e) {
-    console.log('WARN');
+    console.log('PlantUML: WARN');
     console.log(e);
 }
 
 function done_deflating(e) {
     var data = encode64(e.data);
 
-    console.log('Updating diagram with: ' + data);
+    console.log('PlantUML: Encoded: ' + data);
 
-    $('#uml_img').attr('src', "https://www.plantuml.com/plantuml/img/"+data);
-    $('#uml_link').attr('href', "https://www.plantuml.com/plantuml/txt/"+data);
+
+    var img_url = "https://www.plantuml.com/plantuml/img/"+data;
+    var txt_url = "https://www.plantuml.com/plantuml/txt/"+data;
+
+    var curr_img_url = $('#uml_img').attr('src');
+
+    if( curr_img_url != img_url) {
+        $('#uml_img').attr('src', img_url);
+        $('#uml_link').attr('href', txt_url);
+        console.log('PlantUML: Images and Text Updated');
+
+    } else {
+        console.log('PlantUML: UML Unchanged');
+    }
 
 }
 
@@ -94,5 +106,7 @@ function compress(s) {
 }
 
 function update_plantuml_diagram(s) {
+    console.log('PlantUML: Updating ...');
+
     compress(s);
 }

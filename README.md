@@ -1,11 +1,16 @@
 # uml.ide
 
-> A simple web editor for plantuML thats mobile friendly
+> A simple mobile first web editor for both plantuML and Mermaid.js
 
 To learn more about PlantUML, check out:
 
 - http://plantuml.com/
 - https://github.com/plantuml/plantuml-server
+
+To learn more about Mermaid.js, check out:
+
+- https://mermaidjs.github.io
+- https://github.com/knsv/mermaid
 
 ## Dev Notes
 

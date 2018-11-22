@@ -13,7 +13,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm">
-          <h3>UML Code
+          <h3>UML
           <div class="btn-group float-right" role="group" aria-label="Informational Links">
             <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#linkModal">Share Link</button>
             <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#infoModal">?</button>
@@ -53,22 +53,32 @@ end
 
         <div class="col-sm">
           <h3>Diagram
-          <a role="button" class="float-right btn btn-secondary btn-sm" id="uml_link" href="javascript:void(0);" target="_blank" data-toggle="tooltip" title="View an ASCII text version of the diagram">View ASCII</a>
-          </h3>
-          <div class="alert alert-light" role="alert">
-            <img id="uml_img" src='' class="mw-100"/>
-          </div>
-        </div>
 
-        <div class="col-sm d-none">
-          <h3>Diagram
+            <div class="btn-group float-right" role="group" aria-label="Diagram Links">
+              <div class="float-right btn-group btn-group-toggle" data-toggle="buttons">
+                <label id="display-plantuml-label" class="btn btn-secondary btn-sm active">
+                  <input type="radio" name="options" id="display-plantuml" autocomplete="off" checked> PlantUML
+                </label>
+                <label id="display-mermaid-label" class="btn btn-secondary btn-sm">
+                  <input type="radio" name="options" id="display-mermaid" autocomplete="off">
+                  Mermaid
+                </label>
+              </div>
+              <a role="button" class="float-right btn btn-light btn-sm" id="uml_link" href="javascript:void(0);" target="_blank" data-toggle="tooltip" title="View an ASCII text version of the diagram">ASCII</a>
+            </div>
           </h3>
-          <div class="alert alert-light" role="alert">
-            <div id="mermaid">
+
+          <div class="card">
+            <div id="diagram-plantuml" class="card-body" role="alert">
+              <img id="uml_img" src='' class="w-100"/>
+            </div>
+
+            <div id="diagram-mermaid" class="card-body d-none" role="alert">
+              <div id="mermaid"></div>
             </div>
           </div>
-        </div>
 
+        </div>
 
       </div>
     </div>
@@ -84,15 +94,17 @@ end
             </button>
           </div>
           <div class="modal-body">
-            <p>This website uses the PlantUML format of text based UML definition. Thanks to the PlantUML folks for making the processing server and code available!
+            <p>
+              This website allows a user to use either the <a href="http://plantuml.com" target="_blank">Plantuml</a> or <a href="https://mermaidjs.github.io/" target="_blank">Mermaid.js</a> text based UML definition.
             </p>
-            <p>To learn more please take a look at <a href="http://plantuml.com" target="_blank">http://plantuml.com</a>.
+            <p>
+              Thanks to the <a href="http://plantuml.com" target="_blank">Plantuml</a> and <a href="https://mermaidjs.github.io/" target="_blank">Mermaid.js</a> folks for making their code available!
             </p>
-            <p><a href="http://sequencediagram.org" target="_blank">SequenceDiagram.org</a> and <a href="http://chartmage.com" target="_blank">Chartmage</a> are alternatives that share some aspects of the format. However, neither support ASCII output. SequenceDiagram is not open source, while Chartmage is based on <a href="https://mermaidjs.github.io/" target="_blank">Mermaid.js</a>.
+            <p>
+              <a href="http://sequencediagram.org" target="_blank">SequenceDiagram.org</a> and <a href="http://chartmage.com" target="_blank">Chartmage</a> are alternatives that share some aspects of the format. However, neither support ASCII output. SequenceDiagram is not open source, while Chartmage is does not work on Mobile.
             </p>
-            <p>Both Mermaid.js and PlantUML are good. Take a look at each to see which fits your needs.
-            </p>
-            <p><em>Code for this website is located at <a href="https://github.com/khilnani/uml.ide" target="_blank">github.com/khilnani/uml.ide</a>.</em>
+            <p>
+              <em>Code for this website is located at <a href="https://github.com/khilnani/uml.ide" target="_blank">github.com/khilnani/uml.ide</a>.</em>
             </p>
           </div>
           <div class="modal-footer">

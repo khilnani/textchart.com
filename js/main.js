@@ -93,13 +93,45 @@ function read_window_hash() {
         try {
             var uml = b64DecodeUnicode(hash);
             $('#code').val(uml);
-            $('#code').trigger('input');
+            // Below leads to double updates
+            // $('#code').trigger('input');
         }
         catch(e) {
             console.log('WARN');
             console.log('Unable to decode hash: ' + hash);
         }
     }
+}
+
+function set_diagram_plantuml() {
+    console.log('set_diagram_plantuml');
+
+    localStorage.setItem("diagram", "plantuml");
+
+    $('#display-plantuml-label').addClass('active');
+    $('#display-mermaid-label').removeClass('active');
+
+    $('#display-plantuml').prop('checked', true);
+    $('#display-mermaid').removeProp('checked');
+
+    $('#diagram-plantuml').removeClass('d-none');
+    $('#diagram-mermaid').addClass('d-none');
+}
+
+
+function set_diagram_mermaid() {
+    console.log('set_diagram_mermaid');
+
+    localStorage.setItem("diagram", "mermaid");
+
+    $('#display-mermaid-label').addClass('active');
+    $('#display-plantuml-label').removeClass('active');
+
+    $('#display-mermaid').prop('checked', true);
+    $('#display-plantuml').removeProp('checked');
+
+    $('#diagram-mermaid').removeClass('d-none');
+    $('#diagram-plantuml').addClass('d-none');
 }
 
 
@@ -122,6 +154,16 @@ $(function() {
         read_window_hash();
     });
 
+    // Setup PlantUML / Mermaid toggles
+    $('#display-plantuml').on('change', function () {
+        console.log('Display: PlantUML - ' + $(this).val());
+        set_diagram_plantuml();
+    });
+    $('#display-mermaid').on('change', function () {
+        console.log('Display: Mermaid - ' + $(this).val());
+        set_diagram_mermaid();
+    });
+
     // Update the share link when the modal is displayed
     $('#linkModal').on('show.bs.modal', function () {
         clear_share_link();
@@ -129,6 +171,14 @@ $(function() {
     $('#linkModal').on('shown.bs.modal', function () {
         update_share_link();
     });
+
+    // Display PlantUML or Mermaid based on localstorage
+    console.log('Diagram [localstorage]', localStorage.getItem("diagram"))
+    if( localStorage.getItem("diagram") == 'mermaid') {
+        set_diagram_mermaid()
+    } else {
+        set_diagram_plantuml();
+    }
 
     // Update based on prior state in the URL
     read_window_hash();

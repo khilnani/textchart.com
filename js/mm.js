@@ -1,11 +1,11 @@
 function init_mermaid() {
 
-    console.log('Init Mermaid');
+    console.log('Mermaid: Init');
 
     var config = {
-        startOnLoad:true,
-        theme: 'forest',
-        // themeCSS: '.node rect { fill: red; }',
+        startOnLoad:false,
+        // https://github.com/knsv/mermaid/tree/master/src/themes
+        theme: 'neutral',
         logLevel: 3,
         flowchart: { curve: 'linear' },
         gantt: { axisFormat: '%m/%d/%Y' },
@@ -18,7 +18,7 @@ function init_mermaid() {
 
 function display_mermaid(uml) {
 
-    console.log('Render Mermaid');
+    console.log('Mermaid: Updating ...');
 
     uml = 'sequenceDiagram\n' + uml;
 
@@ -26,5 +26,10 @@ function display_mermaid(uml) {
     $('#mermaid').addClass('mermaid');
 
     mermaid.init(undefined, $("#mermaid"));
+
+    $('#mermaid').removeAttr('data-processed');
+
+    console.log('Mermaid: Updated');
+
 
 }
