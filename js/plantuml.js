@@ -1,4 +1,4 @@
-deflate_script = 'js/rawdeflate.js';
+deflate_script = 'js/vendor/rawdeflate.js';
 
 function encode64(data) {
     r = "";
@@ -105,8 +105,13 @@ function compress(s) {
     }
 }
 
-function update_plantuml_diagram(s) {
+function display_plantuml(uml) {
     console.log('PlantUML: Updating ...');
 
-    compress(s);
+    uml = uml.trim();
+    if( uml.toLowerCase().indexOf('skinparam monochrome') == -1) {
+        uml = 'skinparam monochrome true\n\n' +uml;
+    }
+
+    compress(uml);
 }
