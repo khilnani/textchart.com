@@ -22,16 +22,10 @@ function display_mermaid(uml) {
 
     uml = 'sequenceDiagram\n' + uml;
 
+    $('#mermaid').removeAttr('data-processed');
     $('#mermaid').text(uml);
     $('#mermaid').addClass('mermaid');
 
     mermaid.init(undefined, $("#mermaid"));
-
-    window.setTimeout(function () {
-        $('#mermaid').removeAttr('data-processed');
-    }, 1000);
-
     console.log('Mermaid: Updated');
-
-
 }
