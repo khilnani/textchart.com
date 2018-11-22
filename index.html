@@ -15,7 +15,18 @@
         <div class="col-sm">
           <h3>UML
           <div class="btn-group float-right" role="group" aria-label="Informational Links">
-            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#linkModal">Share Link</button>
+
+              <div class="float-right btn-group btn-group-toggle" data-toggle="buttons">
+                <label id="display-plantuml-label" class="btn btn-secondary btn-sm active">
+                  <input type="radio" name="options" id="display-plantuml" autocomplete="off" checked> PlantUML
+                </label>
+                <label id="display-mermaid-label" class="btn btn-secondary btn-sm">
+                  <input type="radio" name="options" id="display-mermaid" autocomplete="off">
+                  Mermaid
+                </label>
+              </div>
+
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#linkModal">Share</button>
             <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#infoModal">?</button>
           </div>
           </h3>
@@ -55,16 +66,7 @@ end
           <h3>Diagram
 
             <div class="btn-group float-right" role="group" aria-label="Diagram Links">
-              <div class="float-right btn-group btn-group-toggle" data-toggle="buttons">
-                <label id="display-plantuml-label" class="btn btn-secondary btn-sm active">
-                  <input type="radio" name="options" id="display-plantuml" autocomplete="off" checked> PlantUML
-                </label>
-                <label id="display-mermaid-label" class="btn btn-secondary btn-sm">
-                  <input type="radio" name="options" id="display-mermaid" autocomplete="off">
-                  Mermaid
-                </label>
-              </div>
-              <a role="button" class="float-right btn btn-light btn-sm" id="uml_link" href="javascript:void(0);" target="_blank" data-toggle="tooltip" title="View an ASCII text version of the diagram">ASCII</a>
+              <a role="button" class="float-right btn btn-light btn-sm" id="uml_link" href="javascript:void(0);" target="_blank" data-toggle="tooltip" title="View an ASCII text version of the diagram">View ASCII</a>
             </div>
           </h3>
 
