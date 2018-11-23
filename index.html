@@ -20,23 +20,23 @@
           <div class="btn-group float-right" role="group" aria-label="Informational Links">
 
               <div class="float-right btn-group btn-group-toggle" data-toggle="buttons">
-                <label id="display-plantuml-label" class="btn btn-secondary btn-sm active">
+                <label id="display-plantuml-label" class="btn btn-info btn-sm active">
                   <input type="radio" name="options" id="display-plantuml" autocomplete="off" checked> PlantUML
                 </label>
-                <label id="display-mermaid-label" class="btn btn-secondary btn-sm">
+                <label id="display-mermaid-label" class="btn btn-info btn-sm">
                   <input type="radio" name="options" id="display-mermaid" autocomplete="off">
                   Mermaid
                 </label>
               </div>
 
-            <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#linkModal"><i class="fas fa-share"></i></button>
-            <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#infoModal"><i class="fas fa-info-circle"></i></button>
+            <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#linkModal"><i class="fas fa-share"></i></button>
+            <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#infoModal"><i class="fas fa-info-circle"></i></button>
           </div>
           </h3>
-          <div class="alert alert-info" role="alert">
-              <em>
+          <div class="card">
+              <div class="card-body">
                   Mobile first text based UML diagram editor
-              </em>
+              </div>
           </div>
           <textarea
           id="code" name="code"
@@ -74,7 +74,7 @@ end
           <h3>Diagram
 
             <div class="btn-group float-right" role="group" aria-label="Diagram Links">
-              <a role="button" class="float-right btn btn-light btn-sm" id="uml_link" href="javascript:void(0);" target="_blank" data-toggle="tooltip" title="View an ASCII text version of the diagram">View ASCII</a>
+              <a role="button" class="float-right btn btn-info btn-sm" id="uml_link" href="javascript:void(0);" target="_blank" data-toggle="tooltip" title="View an ASCII text version of the diagram">View ASCII</a>
             </div>
           </h3>
 
