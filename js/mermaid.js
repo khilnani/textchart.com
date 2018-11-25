@@ -5,7 +5,7 @@ function init_mermaid() {
     var config = {
         startOnLoad:false,
         // https://github.com/knsv/mermaid/tree/master/src/themes
-        theme: 'neutral',
+        theme: 'default', //neutral
         logLevel: 3,
         flowchart: { curve: 'linear' },
         gantt: { axisFormat: '%m/%d/%Y' },
@@ -26,13 +26,15 @@ function display_mermaid(uml) {
             console.log('Mermaid: Skipped PlantUML');
 
             $('#mermaid').removeAttr('data-processed');
-            $('#mermaid').text('PlantUML is not Mermaid.js compatible');
+            $('#mermaid').removeClass('mermaid');
+            $('#mermaid').text('The PlantUML text is not Mermaid compatible');
 
         } else if (uml.length < 10) {
             console.log('Mermaid: Too short/invalid');
 
             $('#mermaid').removeAttr('data-processed');
-            $('#mermaid').text('Is that really Mermaid.js UML?');
+            $('#mermaid').removeClass('mermaid');
+            $('#mermaid').text('Is that really Mermaid UML?');
 
         } else {
 
@@ -53,7 +55,8 @@ function display_mermaid(uml) {
     catch(e) {
         console.log('ERROR: display_mermaid()');
         console.log(e);
-            $('#mermaid').text('Is that really valid Mermaid.js UML?');
-
+            $('#mermaid').removeAttr('data-processed');
+            $('#mermaid').removeClass('mermaid');
+            $('#mermaid').html('<pre>' + e + '</pre>');
     }
 }

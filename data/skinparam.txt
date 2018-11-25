@@ -1,0 +1,79 @@
+skinparam monochrome false
+skinparam shadowing false
+skinparam backgroundColor #ffffff
+skinparam roundCorner 7
+
+skinparam defaultFontColor #333333
+skinparam defaultFontName Helvetica
+
+skinparam ParticipantPadding 20
+skinparam BoxPadding 10
+
+skinparam NoteBorderColor #666666
+skinparam NoteBackgroundColor #fff166
+skinparam NoteBorderThickness 1
+
+/'
+Shape
+'/
+
+skinparam DatabaseBorderColor #000000
+skinparam DatabaseBorderThickness 0.5
+skinparam DatabaseBackgroundColor #ffffff
+skinparam DatabaseFontColor #000000
+
+skinparam ControlBorderColor #000000
+skinparam ControlBorderThickness 1
+skinparam ControlBackgroundColor #ffffff
+skinparam ControlFontColor #000000
+
+/'
+Reactangular
+'/
+
+skinparam RectangleBorderColor #000000
+skinparam RectangleBorderThickness 0.5
+skinparam RectangleBackgroundColor #4d5487
+skinparam RectangleFontColor #000000
+
+skinparam CollectionsBorderColor #000000
+skinparam CollectionsBorderThickness 0.5
+skinparam CollectionsBackgroundColor #4d5487
+skinparam CollectionsFontColor #ffffff
+
+
+skinparam sequence {
+    ArrowColor #000000
+    LifeLineBorderColor #000000
+    LifeLineBackgroundColor #A9CCE3
+
+    BoxBorderColor #cccccc
+    BoxBackgroundColor #edf5f9
+
+    DividerBorderColor #666666
+    DividerBorderThickness 0.7px
+    DividerBackgroundColor #fff166
+
+    GroupBorderColor #666666
+    GroupBorderThickness 1
+    GroupBackgroundColor #fff166
+    GroupBodyBackgroundColor #f0f0f0
+
+/'
+Shape
+'/
+
+    ActorBorderColor #000000
+    ActorBorderThickness 1
+    ActorBackgroundColor #ffffff
+    ActorFontColor #000000
+
+/'
+Reactangular
+'/
+
+    ParticipantBorderColor #000000
+    ParticipantBorderThickness 0.5
+    ParticipantBackgroundColor #4d5487
+    ParticipantFontColor #ffffff
+}

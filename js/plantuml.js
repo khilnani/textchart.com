@@ -1,3 +1,6 @@
+var default_plantuml_skinparam = undefined;
+
+default_skin_path = "data/skinparam.txt";
 deflate_script = 'js/vendor/rawdeflate.js';
 
 function encode64(data) {
@@ -105,13 +108,24 @@ function compress(s) {
     }
 }
 
+function display_plantuml_helper(uml, skin) {
+    if( uml.toLowerCase().indexOf('skinparam') == -1 && skin.indexOf('skinparam') > -1) {
+        uml = skin + '\n\n' +uml;
+    }
+    compress(uml);
+}
+
 function display_plantuml(uml) {
     console.log('PlantUML: Updating ...');
 
     uml = uml.trim();
-    if( uml.toLowerCase().indexOf('skinparam monochrome') == -1) {
-        uml = 'skinparam monochrome true\n\n' +uml;
-    }
 
-    compress(uml);
+    if(default_plantuml_skinparam) {
+        display_plantuml_helper(uml, default_plantuml_skinparam);
+    } else {
+        console.log('PlantUML: Loading ' + default_skin_path);
+        $.get(default_skin_path, function(response) {
+            display_plantuml_helper(uml, response);
+        });
+    }
 }
