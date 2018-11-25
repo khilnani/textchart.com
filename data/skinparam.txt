@@ -57,7 +57,7 @@ skinparam sequence {
     GroupBorderColor #666666
     GroupBorderThickness 1
     GroupBackgroundColor #fff166
-    GroupBodyBackgroundColor #f0f0f0
+    GroupBodyBackgroundColor #f6f6f6
 
 /'
 Shape
