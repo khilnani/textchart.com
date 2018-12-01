@@ -5,10 +5,13 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="google-site-verification" content="X5Jw8uDNeAZKUfoczdoolPQJvkQwYqJZGmGKFjVgBzk" />
-    <!-- font awesome //-->
+    <!-- Font Awesome //-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
     <!-- Bootstrap CSS //-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+    <!-- Codemirror CSS //-->
+    <link rel="stylesheet" href="css/vendor/codemirror.css"/>
+    <link rel="stylesheet" href="css/vendor/theme/material.css"/>
     <!-- custom CSS //-->
     <link rel="stylesheet" href="css/main.css"/>
     <title>TextChart - Mobile optimized PlantUML (text based UML) diagram editor</title>
@@ -76,7 +79,7 @@ deactivate Web
           </h4>
 
           <div class="card">
-            <div id="diagram-plantuml" class="card-body" role="alert">
+            <div class="card-body" role="alert">
               <img id="uml_img" src='' class="mw-100"/>
             </div>
           </div>
@@ -147,6 +150,8 @@ deactivate Web
   <!-- hosted vendor //-->
   <script type="text/javascript" src="js/vendor/uuid.js"></script>
   <script type="text/javascript" src="js/vendor/rawdeflate.js"></script>
+  <script type="text/javascript" src="js/vendor/codemirror/codemirror.js"></script>
+  <script type="text/javascript" src="js/vendor/codemirror/addon/hint/anyword-hint.js"></script>
   <!-- custom //-->
   <script type="text/javascript" src="js/utils.js"></script>
   <script type="text/javascript" src="js/plantuml.js"></script>

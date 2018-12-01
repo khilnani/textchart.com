@@ -4,7 +4,11 @@ html, body {
 
 body {
     margin: 10px 0 10px 0;
-}   
+}
+
+.CodeMirror pre {
+    font-size: 0.76em;
+}
 
 #code.form-control {
     height: 65%;
