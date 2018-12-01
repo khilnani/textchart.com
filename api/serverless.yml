@@ -1,0 +1,60 @@
+service: textchart
+
+provider:
+    name: aws
+    runtime: nodejs8.10
+    stage: dev
+    region: us-east-1
+    memorySize: 128
+    versionFunctions: false
+    cfLogs: true
+    logRetentionInDays: 7
+    iamRoleStatements:
+        - Effect: "Allow"
+          Action:
+              - "dynamodb:GetItem"
+              - "dynamodb:PutItem"
+          Resource: "*"
+    environment:
+        DDB_TABLE: textchart-saved-data-${opt:stage, self:provider.stage}-v0.0
+package:
+    exclude:
+        - .npmignore
+        - fixtures/**
+        - .git/**
+functions:
+    read:
+        handler: handler.handle_read
+        description: Get data
+        timeout: 30
+        events:
+            - http:
+                path: textchart/read
+                method: any
+                cors: true
+                private: false
+    save:
+        handler: handler.handle_save
+        description: Save data
+        timeout: 30
+        events:
+            - http:
+                path: textchart/save
+                method: any
+                cors: true
+                private: false
+resources:
+    Resources:
+        TableTextChartSavedData:
+            Type: AWS::DynamoDB::Table
+            Properties:
+                TableName: ${self:provider.environment.DDB_TABLE}
+                AttributeDefinitions:
+                    - AttributeName: id
+                      AttributeType: S
+                KeySchema:
+                    - AttributeName: id
+                      KeyType: HASH
+                ProvisionedThroughput:
+                    ReadCapacityUnits: 5
+                    WriteCapacityUnits: 5

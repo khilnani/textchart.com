@@ -1,0 +1,22 @@
+{
+  "name": "textchart",
+  "version": "0.0.1",
+  "private": true,
+  "main": "handler.js",
+  "scripts": {
+    "deploy": "npx serverless deploy",
+    "info": "npx serverless info",
+    "log-read": "npx serverless logs -f read -t --startTime 1m",
+    "log-save": "npx serverless logs -f save -t --startTime 1m",
+    "test-read": "npx serverless invoke local -f read -l --path fixtures/read.json",
+    "test-save": "npx serverless invoke local -f save -l --path fixtures/save.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nik@khilnani.org",
+  "dependencies": {
+    "aws-sdk": "^2.368.0"
+  },
+  "devDependencies": {
+    "serverless": "^1.34.1"
+  }
+}
