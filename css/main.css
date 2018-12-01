@@ -6,12 +6,13 @@ body {
     margin: 10px 0 10px 0;
 }
 
-.CodeMirror pre {
+.CodeMirror {
+    height: 67%;
     font-size: 0.76em;
-}
+} 
 
 #code.form-control {
-    height: 65%;
+    height: 67%;
     width: 100%;
 
     background-color: #eeeeee;

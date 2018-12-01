@@ -200,6 +200,7 @@ function load_uml() {
 
 $(function() {
 
+    // Setup CodeMirror
     var code_textarea = $('#code')[0];
     cm = CodeMirror.fromTextArea(code_textarea, {
       lineNumbers: true,
@@ -212,8 +213,14 @@ $(function() {
       mode: "htmlmixed"
     });
 
-		cm_setup_autocomplete();
+		  cm_setup_autocomplete();
+		 
+		 // resize
+		 $( window ).resize(function() {
+		     cm.refresh();
+    });
 
+    // on edit
     cm.on("change", function(cm, change) {
         var uml = cm.getValue();
         refresh_uml(uml);
