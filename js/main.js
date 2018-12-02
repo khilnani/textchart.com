@@ -1,11 +1,9 @@
+///////////////////////////////////////////////////////
 
 var api_url = 'https://7rn7ut09wh.execute-api.us-east-1.amazonaws.com/dev/textchart';
 var cm = undefined;
 
-
-function cm_setup_autocomplete() {
-}
-
+///////////////////////////////////////////////////////
 
 function get_uml() {
     //$('#code').val();
@@ -16,6 +14,8 @@ function set_uml(uml) {
     //$('#code').val(uml);
     cm.setValue(uml);
 }
+
+///////////////////////////////////////////////////////
 
 function refresh_uml() {
     console.log('UML Changed');
@@ -56,6 +56,7 @@ function refresh_uml() {
     }
 }
 
+///////////////////////////////////////////////////////
 
 function save_to_db(newid) {
 
@@ -134,36 +135,7 @@ function read_from_db(id) {
     }
 }
 
-
-function clear_share_link() {
-    $('#page_link').attr('href', 'javascript:void(0); return false;');
-    $('#page_link').text('Updating ...');
-}
-
-function update_share_link() {
-    // Create a short URL
-    var jqxhr = $.ajax({
-        type: 'GET',
-        url: "https://khl.io/?url=" + encodeURIComponent(window.location.href)
-    })
-    jqxhr.done(function( data ) {
-        console.log('Short URL: response_text')
-        console.log(data);
-        var short_url = data['short_url'];
-        console.log('Short URL: ' + short_url);
-        // Use the short error
-        $('#page_link').attr('href', short_url);
-        $('#page_link').text(short_url);
-    });
-    jqxhr.fail(function (e) {
-        console.log('Short URL: Ajax ERROR');
-        console.log(e);
-        // Use the page link if we hit an error
-        $('#page_link').attr('href', page_link);
-        $('#page_link').text(page_link);
-
-    });
-}
+///////////////////////////////////////////////////////
 
 
 function load_uml() {
@@ -198,6 +170,48 @@ function load_uml() {
     }
 }
 
+///////////////////////////////////////////////////////
+
+function clear_share_link() {
+    $('#page_link').attr('href', 'javascript:void(0); return false;');
+    $('#page_link').text('Updating ...');
+}
+
+function update_share_link() {
+    // Create a short URL
+    var jqxhr = $.ajax({
+        type: 'GET',
+        url: "https://khl.io/?url=" + encodeURIComponent(window.location.href)
+    })
+    jqxhr.done(function( data ) {
+        console.log('Short URL: response_text')
+        console.log(data);
+        var short_url = data['short_url'];
+        console.log('Short URL: ' + short_url);
+        // Use the short error
+        $('#page_link').attr('href', short_url);
+        $('#page_link').text(short_url);
+    });
+    jqxhr.fail(function (e) {
+        console.log('Short URL: Ajax ERROR');
+        console.log(e);
+        // Use the page link if we hit an error
+        $('#page_link').attr('href', page_link);
+        $('#page_link').text(page_link);
+
+    });
+}
+
+///////////////////////////////////////////////////////
+
+function cm_setup_autocomplete() {
+  CodeMirror.commands.autocomplete = function(cm) {
+      cm.showHint({hint: CodeMirror.hint.anyword});
+  }
+}
+
+///////////////////////////////////////////////////////
+
 $(function() {
 
     // Setup CodeMirror
@@ -210,14 +224,15 @@ $(function() {
       tabSize: 2,
       autofocus: true,
       theme: 'material',
-      mode: "htmlmixed"
+      extraKeys: {"Ctrl-Space": "autocomplete"},
+      mode: "yaml"
     });
 
-		  cm_setup_autocomplete();
+		cm_setup_autocomplete();
 		 
-		 // resize
-		 $( window ).resize(function() {
-		     cm.refresh();
+		// resize
+		$( window ).resize(function() {
+		    cm.refresh();
     });
 
     // on edit
@@ -251,8 +266,29 @@ $(function() {
     // Update based on prior state in the URL, or DB
     load_uml();
 
+    // Enable revert button
+    $('#revert-btn').on('click', function () {
+        var id = qs('id');
+        if(id) {
+            if(confirm('Revert to the last saved version?')) {
+                load_uml();
+            }
+        } else {
+            alert('No prior saved version exists. Please save first :)');
+        }
+    });
     // Enable save button
     $('#save-btn').on('click', function () {
-        save_to_db();
+        var id = qs('id');
+        var msg = "Save?\n\nWill save to the server with a new ID.";
+        if(id) {
+            msg = "Save?\n\nWill overwrite the current UML on the server at ID: " + id;
+        } 
+        if(confirm(msg)) {
+          save_to_db();
+        }
     });
 });
+
+
+///////////////////////////////////////////////////////

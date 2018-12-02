@@ -1,7 +1,11 @@
+///////////////////////////////////////////////////////
+
 var default_plantuml_skinparam = undefined;
 
 default_skin_path = "data/skinparam.txt";
 deflate_script = 'js/vendor/rawdeflate.js';
+
+///////////////////////////////////////////////////////
 
 function encode64(data) {
     r = "";
@@ -108,6 +112,8 @@ function compress(s) {
     }
 }
 
+///////////////////////////////////////////////////////
+
 function display_plantuml_helper(uml, skin) {
     if( uml.toLowerCase().indexOf('skinparam') == -1 && skin.indexOf('skinparam') > -1) {
         uml = skin + '\n\n' +uml;
@@ -129,3 +135,6 @@ function display_plantuml(uml) {
         });
     }
 }
+
+
+///////////////////////////////////////////////////////

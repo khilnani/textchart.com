@@ -12,6 +12,7 @@
     <!-- Codemirror CSS //-->
     <link rel="stylesheet" href="css/vendor/codemirror.css"/>
     <link rel="stylesheet" href="css/vendor/theme/material.css"/>
+    <link rel="stylesheet" href="js/vendor/codemirror/addon/hint/show-hint.css">"/>
     <!-- custom CSS //-->
     <link rel="stylesheet" href="css/main.css"/>
     <title>TextChart - Mobile optimized PlantUML (text based UML) diagram editor</title>
@@ -27,7 +28,8 @@
                   <!--
                   <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#linkModal"><i class="fas fa-share"></i></button>
                   //-->
-                  <button type="button" class="btn btn-outline-info btn-sm" id="save-btn"><i class="fas fa-save"></i></button>
+                  <button type="button" class="btn btn-outline-info btn-sm" data-toggle="tooltip" title="Revert to last saved version" id="revert-btn"><i class="fas fa-undo"></i></button>
+                  <button type="button" class="btn btn-outline-info btn-sm" data-toggle="tooltip" title="Save to server" id="save-btn"><i class="fas fa-save"></i></button>
                   <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#infoModal"><i class="fas fa-info-circle"></i></button>
               </div>
           </h4>
@@ -151,6 +153,8 @@ deactivate Web
   <script type="text/javascript" src="js/vendor/uuid.js"></script>
   <script type="text/javascript" src="js/vendor/rawdeflate.js"></script>
   <script type="text/javascript" src="js/vendor/codemirror/codemirror.js"></script>
+  <script type="text/javascript" src="js/vendor/codemirror/mode/yaml/yaml.js"></script>
+  <script type="text/javascript" src="js/vendor/codemirror/addon/hint/show-hint.js"></script>
   <script type="text/javascript" src="js/vendor/codemirror/addon/hint/anyword-hint.js"></script>
   <!-- custom //-->
   <script type="text/javascript" src="js/utils.js"></script>
