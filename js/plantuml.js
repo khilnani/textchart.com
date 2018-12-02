@@ -96,6 +96,7 @@ function done_deflating(e) {
 }
 
 function compress(s) {
+    console.log('Compressing UML for PlantUML: ' + deflater);
     //UTF8
     s = unescape(encodeURIComponent(s));
 
