@@ -7,7 +7,7 @@ body {
 }
 
 .CodeMirror {
-    font-family: Arial, monospace;
+    font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
     height: 67%;
     font-size: 0.76em;
 } 
