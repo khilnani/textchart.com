@@ -3,7 +3,7 @@
 var default_plantuml_skinparam = undefined;
 
 default_skin_path = "data/skinparam.txt";
-deflate_script = 'js/vendor/rawdeflate.js';
+deflate_script = 'vendor/rawdeflate.js';
 
 ///////////////////////////////////////////////////////
 
@@ -96,7 +96,7 @@ function done_deflating(e) {
 }
 
 function compress(s) {
-    console.log('Compressing UML for PlantUML: ' + deflater);
+    console.log('iPlantUML: Compressing UML: ' + deflater);
     //UTF8
     s = unescape(encodeURIComponent(s));
 
