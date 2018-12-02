@@ -39,9 +39,6 @@ function loading_show() {
 function loading_hide() {
     console.log('Loading Modal: Hide');
     $('#loadingModal').modal('hide');
-    //setTimeout(function () {
-    //    $('#loadingModal').modal('hide');
-    //}, 1000);
 }
 
 ///////////////////////////////////////////////////////
