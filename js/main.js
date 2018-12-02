@@ -125,6 +125,7 @@ function read_from_db(id) {
           //alert('Status for ' + id + ' is ' + status);
       });
       jqxhr.fail(function (e) {
+          refresh_uml();
           console.log('Read Data ERROR');
           console.log(e);
           alert('Unfortunately, we could not find saved UML for ID: ' + id);
