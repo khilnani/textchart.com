@@ -5,8 +5,7 @@
   "description": "A mobile first editor for text based UML diaggrams using PlantUML",
   "main": "js/main.js",
   "scripts": {
-    "lint": "npx eslint js || true",
-    "lint-fix": "npx eslint js --fix || true",
+    "lint": "npx eslint js --fix || true",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

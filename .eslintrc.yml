@@ -19,6 +19,10 @@ globals:
   # js/plantuml.js
   display_plantuml: true
 rules:
+  no-useless-escape:
+    - off
+  no-undef:
+    - warn
   no-unused-vars:
     - off
   no-console:

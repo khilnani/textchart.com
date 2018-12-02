@@ -31,6 +31,21 @@ function get_last_saved_uml(id) {
 
 ///////////////////////////////////////////////////////
 
+function loading_show() {
+    console.log('Loading Modal: Show');
+    $('#loadingModal').modal('show');
+}
+
+function loading_hide() {
+    console.log('Loading Modal: Hide');
+    $('#loadingModal').modal('hide');
+    //setTimeout(function () {
+    //    $('#loadingModal').modal('hide');
+    //}, 1000);
+}
+
+///////////////////////////////////////////////////////
+
 function refresh_uml() {
     console.log('UML Changed');
 
@@ -74,24 +89,29 @@ function refresh_uml() {
 
 function read_from_db(id, callback) {
 
+    loading_show();
+
     if(id) {
 
         //alert('id: ' + id);
-        console.log('Read Data: ID: ', id);
+        console.log('Read Data: ID: ' + id);
 
         var jqxhr = $.ajax({
             type: 'GET',
             url: api_url + '/read?id=' + id
         });
         jqxhr.done(function( data ) {
-            console.log('Read Data');
+            loading_hide();
+            console.log('Read Data.');
             console.log(data);
             var uml = data['data'];
             var status = data['status'];
             //alert('Status for ' + id + ' is ' + status);
             if( callback) {
+                console.log('Read Data: Invoking callback.');
                 callback(id, uml);
             } else {
+                console.log('Read Data: No callback.');
                 // keep to check if someone edits behind the scenes.
                 set_last_saved_uml(id, uml);
                 set_uml(uml);
@@ -99,6 +119,7 @@ function read_from_db(id, callback) {
             }
         });
         jqxhr.fail(function (e) {
+            loading_hide();
             refresh_uml();
             console.log('Read Data ERROR');
             console.log(e);
@@ -106,6 +127,7 @@ function read_from_db(id, callback) {
         });
 
     } else {
+        loading_hide();
         console.log('Read Data: No ID');
     }
 }
@@ -147,7 +169,8 @@ function save_pre_check(id, uml_server) {
             console.log('Precheck: ABORT');
         }
     } else {
-        console.log('Precheck: PASS');
+        console.log('Precheck: PASS. All clear to save.');
+        save_to_db_helper(id);
     }
 
 }
@@ -160,6 +183,7 @@ function save_to_db_helper(id, uml) {
     }
 
     //alert(uml);
+    loading_show();
 
     var jqxhr = $.ajax({
         type: 'POST',
@@ -170,6 +194,7 @@ function save_to_db_helper(id, uml) {
         }
     });
     jqxhr.done(function( data ) {
+        loading_hide();
         console.log('Save Data');
         console.log(data);
         var s = data['status'];
@@ -182,6 +207,7 @@ function save_to_db_helper(id, uml) {
         window.location.hash = '#';
     });
     jqxhr.fail(function (e) {
+        loading_hide();
         console.log('Save Data ERROR');
         console.log(e);
         alert('Error Saving data: ' + JSON.stringify(e));
