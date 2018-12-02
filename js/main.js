@@ -127,7 +127,7 @@ function read_from_db(id) {
       jqxhr.fail(function (e) {
           console.log('Read Data ERROR');
           console.log(e);
-          alert('Error loading data: ' + JSON.stringify(e));
+          alert('Unfortunately, we could not find saved UML for ID: ' + id);
       });
 
     } else {
