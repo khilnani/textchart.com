@@ -17,7 +17,7 @@ To learn more about PlantUML, check out:
 - PlantUML - https://fontawesome.com
 - CodeMirror - https://codemirror.net
 - Font Awesome - https://fontawesome.com
-- UUID.js - http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript/21963136#21963136
+- UUID v4 - https://github.com/kelektiv/node-uuid
 - rawdeflate.js - https://github.com/johan/js-deflate
 
 ### API

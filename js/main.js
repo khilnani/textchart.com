@@ -65,7 +65,7 @@ function save_to_db(newid) {
 
     if (newid) { 
         //alert('Force New ID');
-        id = UUID.generate();
+        id = uuidv4();
         //alert('New ID: ' + id);
         console.log('Save data: forced new ID', id);
     } else if(id) { 
@@ -73,7 +73,7 @@ function save_to_db(newid) {
         console.log('Save data: using existing ID', id);
     } else {
         //alert('Need ID');
-        id = UUID.generate();
+        id = uuidv4();
         //alert('New ID: ' + id);
         console.log('Save data: new ID', id);
     }

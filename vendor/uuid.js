@@ -3,6 +3,7 @@
  * @author Jeff Ward (jcward.com).
  * @license MIT license
  * @link http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript/21963136#21963136
+ * id = UUID.generate();
  **/
 var UUID = (function() {
   var self = {};
