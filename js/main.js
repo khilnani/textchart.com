@@ -30,7 +30,7 @@ function refresh_uml() {
 
     if(id) {
         // Dont use hash if saved to DB
-        console.log('Skip hash, existing id', id);
+        console.log('Skip hash, using existing ID', id);
         window.location.hash = '#';
     } else {
         // If not saved to DB, save to link
@@ -67,15 +67,15 @@ function save_to_db(newid) {
         //alert('Force New ID');
         id = UUID.generate();
         //alert('New ID: ' + id);
-        console.log('Save data: forced new id', id);
+        console.log('Save data: forced new ID', id);
     } else if(id) { 
         //alert(id);
-        console.log('Save data: existing id', id);
+        console.log('Save data: using existing ID', id);
     } else {
         //alert('Need ID');
         id = UUID.generate();
         //alert('New ID: ' + id);
-        console.log('Save data: new id', id);
+        console.log('Save data: new ID', id);
     }
 
     //alert(uml);
@@ -109,7 +109,7 @@ function read_from_db(id) {
     if(id) {
 
       //alert('id: ' + id);
-      console.log('Read Data: id: ', id);
+      console.log('Read Data: ID: ', id);
 
       var jqxhr = $.ajax({
           type: 'GET',
@@ -132,7 +132,7 @@ function read_from_db(id) {
       });
 
     } else {
-        console.log('Read Data: No id');
+        console.log('Read Data: No ID');
     }
 }
 
@@ -145,11 +145,11 @@ function load_uml() {
 
     if(id) {
         // read id
-        console.log('Loading uml from DB')
+        console.log('Loading UML from DB')
         read_from_db(id);
     } else {
         // Read from hash
-        console.log('Loading uml from hash')
+        console.log('Loading UML from hash')
         if(window.location.hash) {
             var hash = window.location.hash;
             hash = hash.slice(1);
