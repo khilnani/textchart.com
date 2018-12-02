@@ -22,6 +22,8 @@ To learn more about PlantUML, check out:
 
 ### API
 
+> API code is in the `api` directory
+
 - Serverless - https://serverless.com
 - AWS - https://aws.amazon.com
 - Noode.js - https://nodejs.org
