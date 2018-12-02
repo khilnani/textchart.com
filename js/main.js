@@ -15,6 +15,20 @@ function set_uml(uml) {
     cm.setValue(uml);
 }
 
+function set_last_saved_uml(id, uml) {
+    window.sessionStorage.setItem(id, uml);
+    console.log('Session Storage: Saved for ID:' + id);
+}
+
+function get_last_saved_uml(id) {
+    var data = window.sessionStorage.getItem(id);
+    if( data == null || data == undefined) {
+        console.log('Session Storage: Not found ID:' + id);
+        data = '';
+    }
+    return data;
+}
+
 ///////////////////////////////////////////////////////
 
 function refresh_uml() {
@@ -58,24 +72,91 @@ function refresh_uml() {
 
 ///////////////////////////////////////////////////////
 
+function read_from_db(id, callback) {
+
+    if(id) {
+
+        //alert('id: ' + id);
+        console.log('Read Data: ID: ', id);
+
+        var jqxhr = $.ajax({
+            type: 'GET',
+            url: api_url + '/read?id=' + id
+        });
+        jqxhr.done(function( data ) {
+            console.log('Read Data');
+            console.log(data);
+            var uml = data['data'];
+            var status = data['status'];
+            //alert('Status for ' + id + ' is ' + status);
+            if( callback) {
+                callback(id, uml);
+            } else {
+                // keep to check if someone edits behind the scenes.
+                set_last_saved_uml(id, uml);
+                set_uml(uml);
+                refresh_uml();
+            }
+        });
+        jqxhr.fail(function (e) {
+            refresh_uml();
+            console.log('Read Data ERROR');
+            console.log(e);
+            alert('Unfortunately, we could not find saved UML for ID: ' + id);
+        });
+
+    } else {
+        console.log('Read Data: No ID');
+    }
+}
+
 function save_to_db(newid) {
 
     var id = qs('id');
     var uml = get_uml();
 
     if (newid) { 
-        //alert('Force New ID');
+        //mlert('Force New ID');
         id = uuidv4();
         //alert('New ID: ' + id);
-        console.log('Save data: forced new ID', id);
+        console.log('Save data: Force new ID', id);
+        save_to_db_helper(id, uml);
     } else if(id) { 
         //alert(id);
-        console.log('Save data: using existing ID', id);
+        console.log('Save data: Using existing ID', id);
+        read_from_db(id, save_pre_check);
     } else {
         //alert('Need ID');
         id = uuidv4();
         //alert('New ID: ' + id);
-        console.log('Save data: new ID', id);
+        console.log('Save data: New ID', id);
+        save_to_db_helper(id, uml);
+    }
+
+}
+
+function save_pre_check(id, uml_server) {
+    var uml_last_save = get_last_saved_uml(id);
+    console.log('Save Precheck: uml_last_save: ' + typeof(uml_last_save));
+
+    if(uml_last_save.trim() != uml_server.trim()) {
+        console.log('Precheck: FAIL');
+        if(confirm('Someone else saved UML while you were editing.\n\nConfirm overwrite?')) {
+            save_to_db_helper(id);
+        } else {
+            console.log('Precheck: ABORT');
+        }
+    } else {
+        console.log('Precheck: PASS');
+    }
+
+}
+
+function save_to_db_helper(id, uml) {
+    console.log('Save Helper ID: ' + id);
+
+    if(uml == undefined) {
+        uml = get_uml();
     }
 
     //alert(uml);
@@ -84,16 +165,19 @@ function save_to_db(newid) {
         type: 'POST',
         url: api_url + '/save',
         data: {
-          'id': id,
-          'data': uml
+            'id': id,
+            'data': uml
         }
-    })
+    });
     jqxhr.done(function( data ) {
         console.log('Save Data');
         console.log(data);
         var s = data['status'];
         //alert(s);
         alert('UML Saved.');
+        // keep to check if someone edits behind the scenes.
+        set_last_saved_uml(id, uml);
+        // update
         window.location.search = 'id=' + id;
         window.location.hash = '#';
     });
@@ -103,39 +187,6 @@ function save_to_db(newid) {
         alert('Error Saving data: ' + JSON.stringify(e));
     });
 }
-
-function read_from_db(id) {
-
-    if(id) {
-
-      //alert('id: ' + id);
-      console.log('Read Data: ID: ', id);
-
-      var jqxhr = $.ajax({
-          type: 'GET',
-          url: api_url + '/read?id=' + id
-      })
-      jqxhr.done(function( data ) {
-          console.log('Read Data');
-          console.log(data);
-          var uml = data['data'];
-          var status = data['status'];
-          set_uml(uml);
-          refresh_uml();
-          //alert('Status for ' + id + ' is ' + status);
-      });
-      jqxhr.fail(function (e) {
-          refresh_uml();
-          console.log('Read Data ERROR');
-          console.log(e);
-          alert('Unfortunately, we could not find saved UML for ID: ' + id);
-      });
-
-    } else {
-        console.log('Read Data: No ID');
-    }
-}
-
 ///////////////////////////////////////////////////////
 
 
@@ -145,11 +196,11 @@ function load_uml() {
 
     if(id) {
         // read id
-        console.log('Loading UML from DB')
+        console.log('Loading UML from DB');
         read_from_db(id);
     } else {
         // Read from hash
-        console.log('Loading UML from hash')
+        console.log('Loading UML from hash');
         if(window.location.hash) {
             var hash = window.location.hash;
             hash = hash.slice(1);
@@ -166,7 +217,7 @@ function load_uml() {
                 console.log('Unable to decode hash: ' + hash);
             }
         }
-        
+
         refresh_uml();
     }
 }
@@ -182,10 +233,10 @@ function update_share_link() {
     // Create a short URL
     var jqxhr = $.ajax({
         type: 'GET',
-        url: "https://khl.io/?url=" + encodeURIComponent(window.location.href)
-    })
+        url: 'https://khl.io/?url=' + encodeURIComponent(window.location.href)
+    });
     jqxhr.done(function( data ) {
-        console.log('Short URL: response_text')
+        console.log('Short URL: response_text');
         console.log(data);
         var short_url = data['short_url'];
         console.log('Short URL: ' + short_url);
@@ -196,6 +247,7 @@ function update_share_link() {
     jqxhr.fail(function (e) {
         console.log('Short URL: Ajax ERROR');
         console.log(e);
+        var page_link = location.href;
         // Use the page link if we hit an error
         $('#page_link').attr('href', page_link);
         $('#page_link').text(page_link);
@@ -206,9 +258,9 @@ function update_share_link() {
 ///////////////////////////////////////////////////////
 
 function cm_setup_autocomplete() {
-  CodeMirror.commands.autocomplete = function(cm) {
-      cm.showHint({hint: CodeMirror.hint.anyword});
-  }
+    CodeMirror.commands.autocomplete = function(cm) {
+        cm.showHint({hint: CodeMirror.hint.anyword});
+    };
 }
 
 ///////////////////////////////////////////////////////
@@ -218,26 +270,26 @@ $(function() {
     // Setup CodeMirror
     var code_textarea = $('#code')[0];
     cm = CodeMirror.fromTextArea(code_textarea, {
-      lineNumbers: true,
-      lineWrapping: true,
-      showCursorWhenSelecting: true,
-      indentUnit: 2,
-      tabSize: 2,
-      autofocus: true,
-      theme: 'material',
-      extraKeys: {"Ctrl-Space": "autocomplete"},
-      mode: "yaml"
+        lineNumbers: true,
+        lineWrapping: true,
+        showCursorWhenSelecting: true,
+        indentUnit: 2,
+        tabSize: 2,
+        autofocus: true,
+        theme: 'material',
+        extraKeys: {'Ctrl-Space': 'autocomplete'},
+        mode: 'yaml'
     });
 
-		cm_setup_autocomplete();
-		 
-		// resize
-		$( window ).resize(function() {
-		    cm.refresh();
+    cm_setup_autocomplete();
+
+    // resize
+    $( window ).resize(function() {
+        cm.refresh();
     });
 
     // on edit
-    cm.on("change", function(cm, change) {
+    cm.on('change', function(cm, change) {
         var uml = cm.getValue();
         refresh_uml(uml);
     });
@@ -252,7 +304,7 @@ $(function() {
 
     // Setup forward/back history handling
     $(window).on('popstate', function(event) {
-        console.log('Window History movement')
+        console.log('Window History movement');
         load_uml();
     });
 
@@ -281,12 +333,12 @@ $(function() {
     // Enable save button
     $('#save-btn').on('click', function () {
         var id = qs('id');
-        var msg = "Save?\n\nWill save to the server with a new ID.";
+        var msg = 'Save to the server with a new ID?';
         if(id) {
-            msg = "Save?\n\nWill overwrite the current UML on the server at ID: " + id;
+            msg = 'Save to the server with ID: ' + id;
         } 
         if(confirm(msg)) {
-          save_to_db();
+            save_to_db();
         }
     });
 });

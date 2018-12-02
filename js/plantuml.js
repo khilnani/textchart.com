@@ -1,14 +1,15 @@
 ///////////////////////////////////////////////////////
 
 var default_plantuml_skinparam = undefined;
+var deflater = undefined;
 
-default_skin_path = "data/skinparam.txt";
-deflate_script = 'vendor/rawdeflate.js';
+var default_skin_path = 'data/skinparam.txt';
+var deflate_script = 'vendor/rawdeflate.js';
 
 ///////////////////////////////////////////////////////
 
 function encode64(data) {
-    r = "";
+    r = '';
     for (i=0; i<data.length; i+=3) {
         if (i+2==data.length) {
             r +=append3bytes(data.charCodeAt(i), data.charCodeAt(i+1), 0);
@@ -27,7 +28,7 @@ function append3bytes(b1, b2, b3) {
     c2 = ((b1 & 0x3) << 4) | (b2 >> 4);
     c3 = ((b2 & 0xF) << 2) | (b3 >> 6);
     c4 = b3 & 0x3F;
-    r = "";
+    r = '';
     r += encode6bit(c1 & 0x3F);
     r += encode6bit(c2 & 0x3F);
     r += encode6bit(c3 & 0x3F);
@@ -57,7 +58,6 @@ function encode6bit(b) {
     return '?';
 }
 
-var deflater = undefined;
 try {
     deflater = window.SharedWorker && new SharedWorker(deflate_script);
 
@@ -76,11 +76,11 @@ try {
 function done_deflating(e) {
     var data = encode64(e.data);
 
-    console.log('PlantUML: Encoded: ' + data);
+    console.log('PlantUML: Encoded.');
 
 
-    var img_url = "https://www.plantuml.com/plantuml/img/"+data;
-    var txt_url = "https://www.plantuml.com/plantuml/txt/"+data;
+    var img_url = 'https://www.plantuml.com/plantuml/img/'+data;
+    var txt_url = 'https://www.plantuml.com/plantuml/txt/'+data;
 
     var curr_img_url = $('#uml_img').attr('src');
 
@@ -96,7 +96,7 @@ function done_deflating(e) {
 }
 
 function compress(s) {
-    console.log('iPlantUML: Compressing UML: ' + deflater);
+    console.log('PlantUML: Compressing UML: ' + deflater);
     //UTF8
     s = unescape(encodeURIComponent(s));
 

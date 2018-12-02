@@ -1,0 +1,37 @@
+env:
+  browser: true
+extends: 'eslint:recommended'
+parserOptions:
+  ecmaVersion: 5
+globals:
+  # jquery
+  $: true
+  # vendor/codemirror
+  CodeMirror: true
+  # vendor/uuidv4.js
+  uuidv4: true
+  # vendor/rawdeflate.js
+  deflate: true
+  # js/utils.js
+  qs: true
+  b64DecodeUnicode: true
+  b64EncodeUnicode: true
+  # js/plantuml.js
+  display_plantuml: true
+rules:
+  no-unused-vars:
+    - off
+  no-console:
+    - off
+  indent:
+    - warn
+    - 4
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always

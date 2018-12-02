@@ -1,0 +1,25 @@
+{
+  "name": "textchart",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A mobile first editor for text based UML diaggrams using PlantUML",
+  "main": "js/main.js",
+  "scripts": {
+    "lint": "npx eslint js || true",
+    "lint-fix": "npx eslint js --fix || true",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khilnani/textchart.git"
+  },
+  "author": "Nik Khilnani",
+  "license": "agpl-3.0",
+  "bugs": {
+    "url": "https://github.com/khilnani/textchart/issues"
+  },
+  "homepage": "https://github.com/khilnani/textchart#readme",
+  "devDependencies": {
+    "eslint": "^5.9.0"
+  }
+}
