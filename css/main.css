@@ -44,6 +44,6 @@ body {
     border: none;
 }
 
-#loadingModal fa-spinner {
+#loadingModal .fa-spinner {
     color: #ffffff;
 }
