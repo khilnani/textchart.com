@@ -43,3 +43,7 @@ body {
     background-color: transparent;
     border: none;
 }
+
+#loadingModal fa-spinner {
+    color: #ffffff;
+}
