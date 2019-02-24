@@ -2,6 +2,7 @@
 
 var api_url = 'https://7rn7ut09wh.execute-api.us-east-1.amazonaws.com/dev/textchart';
 var cm = undefined;
+var default_sample_uml = 'data/sample-seq.txt';
 
 ///////////////////////////////////////////////////////
 
@@ -42,6 +43,13 @@ function loading_hide() {
 }
 
 ///////////////////////////////////////////////////////
+
+function load_sample_uml() {
+    $.get(default_sample_uml, function(response) {
+        set_uml(response);
+        refresh_uml();
+    });   
+}
 
 function refresh_uml() {
     console.log('UML Changed');
@@ -238,10 +246,11 @@ function load_uml() {
             catch(e) {
                 console.log('WARN');
                 console.log('Unable to decode hash: ' + hash);
-            }
+            }            
+            refresh_uml();
+        } else {
+            load_sample_uml();
         }
-
-        refresh_uml();
     }
 }
 
