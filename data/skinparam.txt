@@ -10,10 +10,10 @@ skinparam shadowing false
 skinparam backgroundColor #ffffff
 skinparam roundCorner 7
 
-skinparam ArrowColor #333333
+skinparam ArrowColor #6998B5
 skinparam defaultBorderColor #666666
 
-skinparam defaultFontColor #333333
+skinparam defaultFontColor #3E4681
 skinparam defaultFontName Helvetica
 skinparam defaultFontSize 12
 skinparam defaultTextAlignment center
@@ -38,10 +38,10 @@ skinparam ControlBorderThickness 1
 skinparam ControlBackgroundColor #C5E5BB
 skinparam ControlFontColor #000000
 
-skinparam ActorBorderColor #333333
-skinparam ActorBorderThickness 1
+skinparam ActorBorderColor #3E4681
+skinparam ActorBorderThickness 1.5
 skinparam ActorBackgroundColor #ffffff
-skinparam ActorFontColor #000000
+skinparam ActorFontColor #3E4681
 
 skinparam RectanglePadding 20
 skinparam RectangleBorderThickness 0.5
@@ -50,10 +50,10 @@ skinparam RectangleBackgroundColor #C1C6EC
 skinparam RectangleBorderColor #202758
 
 skinparam ParticipantPadding 20
-skinparam ParticipantBorderThickness 0.5
-skinparam ParticipantFontColor #ffffff
-skinparam ParticipantBackgroundColor #3E4681
-skinparam ParticipantBorderColor #202758
+skinparam ParticipantBorderThickness 1.5
+skinparam ParticipantFontColor #3E4681
+skinparam ParticipantBackgroundColor #ffffff
+skinparam ParticipantBorderColor #3E4681
 
 skinparam GroupFontColor #5F560B
 skinparam GroupBodyFontColor #5F560B
@@ -90,3 +90,14 @@ skinparam sequence {
     GroupBackgroundColor #fff166
     GroupBodyBackgroundColor #f9f9f9
 }
+
+
+box "\nFront-end\n"
+	participant "<color:black><size:35><&people></size></color>" as User #ffffff
+	participant "<img:http://cdn1.iconfinder.com/data/icons/logotypes/32/chrome-24.png{scale=1}>" as Web #ffffff
+end box
+box "\nBack-end\n"
+  participant API
+  participant Auth
+  participant DB
+end box
