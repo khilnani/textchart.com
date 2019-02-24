@@ -1,0 +1,18 @@
+rectangle "<size:45><&people></size>" as User #FFFFFF
+rectangle UI #FFE17C {
+	rectangle About #ffffff
+  rectangle Home #ffffff
+  rectangle Login #ffffff
+}
+rectangle Services #FFEDB0 {
+	rectangle Auth #ffffff
+	rectangle Content #ffffff
+}
+
+' #FFE17C, FFEDB0
+
+User -[hidden]- Home
+
+Login --> Auth
+Home --> Content
+About --> Content
