@@ -64,7 +64,7 @@ skinparam GroupBackgroundColor #fff166
 skinparam GroupBodyBackgroundColor #f9f9f9
 
 skinparam sequence {
-    LifeLineBorderColor #000000
+    LifeLineBorderColor #89AEC6
     LifeLineBackgroundColor #A9CCE3
     
     BoxPadding 10
