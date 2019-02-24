@@ -1,7 +1,14 @@
+/'
+Skin/Theme
+'/
+
 skinparam monochrome false
 skinparam shadowing false
 skinparam backgroundColor #ffffff
 skinparam roundCorner 7
+
+skinparam ArrowColor #000000
+skinparam defaultBorderColor #333333
 
 skinparam defaultFontColor #333333
 skinparam defaultFontName Helvetica
@@ -10,14 +17,12 @@ skinparam defaultTextAlignment center
 
 skinparam ParticipantPadding 20
 skinparam BoxPadding 10
-
+skinparam BoxBorderColor #cccccc
+skinparam BoxBackgroundColor #edf5f9
+    
 skinparam NoteBorderColor #666666
 skinparam NoteBackgroundColor #fff166
 skinparam NoteBorderThickness 1
-
-/'
-Shape
-'/
 
 skinparam DatabaseBorderColor #000000
 skinparam DatabaseBorderThickness 0.5
@@ -29,10 +34,6 @@ skinparam ControlBorderThickness 1
 skinparam ControlBackgroundColor #ffffff
 skinparam ControlFontColor #000000
 
-/'
-Reactangular
-'/
-
 skinparam RectangleBorderColor #000000
 skinparam RectangleBorderThickness 0.5
 skinparam RectangleBackgroundColor #4d5487
@@ -43,39 +44,26 @@ skinparam CollectionsBorderThickness 0.5
 skinparam CollectionsBackgroundColor #4d5487
 skinparam CollectionsFontColor #ffffff
 
+skinparam ActorBorderColor #000000
+skinparam ActorBorderThickness 1
+skinparam ActorBackgroundColor #ffffff
+skinparam ActorFontColor #000000
+
+skinparam ParticipantBorderColor #000000
+skinparam ParticipantBorderThickness 0.5
+skinparam ParticipantBackgroundColor #4d5487
+skinparam ParticipantFontColor #ffffff
+
+skinparam GroupBorderColor #666666
+skinparam GroupBorderThickness 1
+skinparam GroupBackgroundColor #fff166
+skinparam GroupBodyBackgroundColor #f9f9f9
 
 skinparam sequence {
-    ArrowColor #000000
     LifeLineBorderColor #000000
     LifeLineBackgroundColor #A9CCE3
-
-    BoxBorderColor #cccccc
-    BoxBackgroundColor #edf5f9
 
     DividerBorderColor #666666
     DividerBorderThickness 0.7px
     DividerBackgroundColor #fff166
-
-    GroupBorderColor #666666
-    GroupBorderThickness 1
-    GroupBackgroundColor #fff166
-    GroupBodyBackgroundColor #f9f9f9
-
-/'
-Shape
-'/
-
-    ActorBorderColor #000000
-    ActorBorderThickness 1
-    ActorBackgroundColor #ffffff
-    ActorFontColor #000000
-
-/'
-Reactangular
-'/
-
-    ParticipantBorderColor #000000
-    ParticipantBorderThickness 0.5
-    ParticipantBackgroundColor #4d5487
-    ParticipantFontColor #ffffff
 }
