@@ -1,4 +1,5 @@
-participant "<size:20><&people></size>" as User
+participant "<size:35><&people></size>" as User #000000
+participant "<img:http://cdn1.iconfinder.com/data/icons/laptop-13/100/laptop28-512.png{scale=0.05}>" as Web #ffffff
 
 User ->> Web: Request page
 activate Web
