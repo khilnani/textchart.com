@@ -10,7 +10,7 @@ skinparam shadowing false
 skinparam backgroundColor #ffffff
 skinparam roundCorner 7
 
-skinparam ArrowColor #6998B5
+skinparam ArrowColor #666666
 skinparam defaultBorderColor #666666
 
 skinparam defaultFontColor #3E4681
@@ -69,6 +69,9 @@ skinparam CollectionsBackgroundColor #2480AA
 skinparam CollectionsFontColor #ffffff
 
 skinparam sequence {
+
+    ArrowColor #6998B5
+
     LifeLineBorderColor #6998B5
     LifeLineBorderThickness 1
     LifeLineBackgroundColor #A9CCE3
