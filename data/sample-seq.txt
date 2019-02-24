@@ -1,11 +1,11 @@
 box "\nFront-end\n"
-	participant "<color:black><size:35><&people></size></color>" as User #ffffff
-	participant "<img:http://cdn1.iconfinder.com/data/icons/logotypes/32/chrome-24.png{scale=1}>" as Web #ffffff
+	participant "<img:http://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-24.png>\nUser" as User 
+	participant "<img:http://cdn1.iconfinder.com/data/icons/logotypes/32/chrome-24.png{scale=1}>\nWeb" as Web 
 end box
 box "\nBack-end\n"
-  participant API
-  participant Auth
-  participant DB
+  participant "<img:http://cdn2.iconfinder.com/data/icons/business-process-1/512/api-24.png>\nAPI" as API 
+  participant "<img:http://cdn0.iconfinder.com/data/icons/Hosting_Icons/32/secure-server-px-png.png{scale=0.7}>\nAuth" as Auth 
+  participant "<img:http://cdn0.iconfinder.com/data/icons/small-n-flat/24/678113-database-24.png>\nDB" as DB 
 end box
 
 User ->> Web: Request page
