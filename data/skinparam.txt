@@ -2,6 +2,8 @@
 Skin/Theme
 '/
 
+left to right direction
+
 skinparam monochrome false
 skinparam shadowing false
 skinparam backgroundColor #ffffff
