@@ -90,14 +90,3 @@ skinparam sequence {
     GroupBackgroundColor #fff166
     GroupBodyBackgroundColor #f9f9f9
 }
-
-
-box "\nFront-end\n"
-	participant "<color:black><size:35><&people></size></color>" as User #ffffff
-	participant "<img:http://cdn1.iconfinder.com/data/icons/logotypes/32/chrome-24.png{scale=1}>" as Web #ffffff
-end box
-box "\nBack-end\n"
-  participant API
-  participant Auth
-  participant DB
-end box
