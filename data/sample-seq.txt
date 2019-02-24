@@ -1,8 +1,10 @@
+participant "<size:20><&people></size>" as User
+
 User ->> Web: Request page
 activate Web
 Web ->> User: Home page
 User ->> Web: Login
-Note right of Auth: *TODO* Use Oauth2
+Note right of Auth: *<b>TODO</b>* Use Oauth2
 Web ->> Auth: Validate
 activate Auth
 opt Success
