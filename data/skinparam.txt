@@ -19,8 +19,8 @@ skinparam defaultFontSize 12
 skinparam defaultTextAlignment center
 
 skinparam BoxPadding 10
-skinparam BoxBorderThickness 0.5
-skinparam BoxBorderColor #aaaaaa
+skinparam BoxBorderThickness 0.3
+skinparam BoxBorderColor #cccccc
 skinparam BoxBackgroundColor #edf5f9
     
 skinparam NoteBorderColor #666666
@@ -68,8 +68,8 @@ skinparam sequence {
     LifeLineBackgroundColor #A9CCE3
     
     BoxPadding 10
-    BoxBorderThickness 0.5
-    BoxBorderColor #aaaaaa
+    BoxBorderThickness 0.3
+    BoxBorderColor #cccccc
     BoxBackgroundColor #edf5f9
 
     DividerBorderColor #666666
