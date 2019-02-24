@@ -6,6 +6,7 @@ skinparam roundCorner 7
 skinparam defaultFontColor #333333
 skinparam defaultFontName Helvetica
 skinparam defaultFontSize 12
+skinparam defaultTextAlignment center
 
 skinparam ParticipantPadding 20
 skinparam BoxPadding 10
