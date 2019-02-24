@@ -3,7 +3,7 @@
 '/
 
 ' left to right direction
-'top to bottom direction
+' top to bottom direction
 
 skinparam monochrome false
 skinparam shadowing false
