@@ -45,7 +45,7 @@ function loading_hide() {
 ///////////////////////////////////////////////////////
 
 function load_sample_uml() {
-    console.log('Load Sample UML');
+    console.log('Loading Sample UML');
     $.get(default_sample_uml, function(response) {
         set_uml(response);
         refresh_uml();
@@ -94,6 +94,7 @@ function refresh_uml() {
 ///////////////////////////////////////////////////////
 
 function read_from_db(id, callback) {
+    console.log('DB: Reading');
 
     loading_show();
 
@@ -139,7 +140,8 @@ function read_from_db(id, callback) {
 }
 
 function save_to_db(newid) {
-
+    console.log('DB: Saving');
+    
     var id = qs('id');
     var uml = get_uml();
 
@@ -223,7 +225,8 @@ function save_to_db_helper(id, uml) {
 
 
 function load_uml() {
-
+    console.log('Load UML');
+    
     var id = qs('id');
 
     if(id) {
@@ -263,6 +266,8 @@ function clear_share_link() {
 }
 
 function update_share_link() {
+    console.log('Update share link');
+    
     // Create a short URL
     var jqxhr = $.ajax({
         type: 'GET',
@@ -299,7 +304,8 @@ function cm_setup_autocomplete() {
 ///////////////////////////////////////////////////////
 
 $(function() {
-
+    console.log('Init');
+    
     // Setup CodeMirror
     var code_textarea = $('#code')[0];
     cm = CodeMirror.fromTextArea(code_textarea, {
