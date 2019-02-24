@@ -69,4 +69,9 @@ skinparam sequence {
     DividerBorderColor #666666
     DividerBorderThickness 0.7px
     DividerBackgroundColor #fff166
+    
+    GroupBorderColor #666666
+    GroupBorderThickness 1
+    GroupBackgroundColor #fff166
+    GroupBodyBackgroundColor #f9f9f9
 }
