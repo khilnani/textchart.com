@@ -1,0 +1,25 @@
+User ->> Web: Request page
+activate Web
+Web ->> User: Home page
+User ->> Web: Login
+Note right of Auth: *TODO* Use Oauth2
+Web ->> Auth: Validate
+activate Auth
+opt Success
+    Auth ->> Web : Success message
+    Web ->> API: Get data
+    activate API
+    API ->> DB: Get data
+    activate DB
+    DB ->> API: Profile info
+    deactivate DB
+    API ->> Web: Profile info
+    deactivate API
+    Web ->> User: Profile page
+end
+opt Failure
+    Auth ->> Web: Error
+    Web ->> User: Error page
+end
+deactivate Auth
+deactivate Web
