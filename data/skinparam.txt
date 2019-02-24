@@ -1,8 +1,9 @@
 /'
-Skin/Theme
+    Skin
 '/
 
-left to right direction
+' left to right direction
+top to bottom direction
 
 skinparam monochrome false
 skinparam shadowing false
