@@ -10,7 +10,7 @@ skinparam shadowing false
 skinparam backgroundColor #ffffff
 skinparam roundCorner 7
 
-skinparam ArrowColor #000000
+skinparam ArrowColor #333333
 skinparam defaultBorderColor #666666
 
 skinparam defaultFontColor #333333
