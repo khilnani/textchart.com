@@ -1,5 +1,12 @@
-participant "<size:35><&people></size>" as User #000000
-participant "<img:http://cdn1.iconfinder.com/data/icons/laptop-13/100/laptop28-512.png{scale=0.05}>" as Web #ffffff
+box "\nFront-end\n"
+	participant "<color:black><size:35><&people></size></color>" as User #ffffff
+	participant "<img:http://cdn1.iconfinder.com/data/icons/logotypes/32/chrome-24.png{scale=1}>" as Web #ffffff
+end box
+box "\nBack-end\n"
+  participant API
+  participant Auth
+  participant DB
+end box
 
 User ->> Web: Request page
 activate Web
