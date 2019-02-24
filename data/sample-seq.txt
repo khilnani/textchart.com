@@ -18,7 +18,7 @@ opt Success
     Web ->> User: Profile page
 end
 opt Failure
-    Auth ->> Web: Error
+    Auth ->> Web: Error response
     Web ->> User: Error page
 end
 deactivate Auth
