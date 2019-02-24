@@ -18,9 +18,9 @@ skinparam defaultFontName Helvetica
 skinparam defaultFontSize 12
 skinparam defaultTextAlignment center
 
-skinparam ParticipantPadding 20
 skinparam BoxPadding 10
-skinparam BoxBorderColor #cccccc
+skinparam BoxBorderThickness 0.5
+skinparam BoxBorderColor #aaaaaa
 skinparam BoxBackgroundColor #edf5f9
     
 skinparam NoteBorderColor #666666
@@ -52,6 +52,7 @@ skinparam ActorBorderThickness 1
 skinparam ActorBackgroundColor #ffffff
 skinparam ActorFontColor #000000
 
+skinparam ParticipantPadding 20
 skinparam ParticipantBorderColor #000000
 skinparam ParticipantBorderThickness 0.5
 skinparam ParticipantBackgroundColor #4d5487
@@ -65,6 +66,11 @@ skinparam GroupBodyBackgroundColor #f9f9f9
 skinparam sequence {
     LifeLineBorderColor #000000
     LifeLineBackgroundColor #A9CCE3
+    
+    BoxPadding 10
+    BoxBorderThickness 0.5
+    BoxBorderColor #aaaaaa
+    BoxBackgroundColor #edf5f9
 
     DividerBorderColor #666666
     DividerBorderThickness 0.7px
