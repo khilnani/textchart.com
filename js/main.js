@@ -45,6 +45,7 @@ function loading_hide() {
 ///////////////////////////////////////////////////////
 
 function load_sample_uml() {
+    console.log('Load Sample UML');
     $.get(default_sample_uml, function(response) {
         set_uml(response);
         refresh_uml();
@@ -52,7 +53,7 @@ function load_sample_uml() {
 }
 
 function refresh_uml() {
-    console.log('UML Changed');
+    console.log('Refresh UML: Changed');
 
     // Get UML
     var uml = get_uml();
@@ -227,11 +228,11 @@ function load_uml() {
 
     if(id) {
         // read id
-        console.log('Loading UML from DB');
+        console.log('Loading UML: from DB');
         read_from_db(id);
     } else {
         // Read from hash
-        console.log('Loading UML from hash');
+        console.log('Loading UML: from hash');
         if(window.location.hash) {
             var hash = window.location.hash;
             hash = hash.slice(1);
