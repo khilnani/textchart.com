@@ -28,7 +28,7 @@ skinparam Rectangle {
 	BorderColor<<" ">> #ffffff
 }
 
-title **ChatBot High-Level Architecture**\n\nThis diagram shows the basic steps of how a bot app responds to a message"
+title **ChatBot High-Level Architecture**\n\nThis diagram shows the basic steps of how a bot app responds to a message
 
 rectangle "**Message In**" as in #eeeeee
 rectangle "**Message Out**" as out #85C1E9
