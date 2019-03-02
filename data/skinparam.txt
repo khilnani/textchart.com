@@ -13,7 +13,7 @@ skinparam roundCorner 7
 skinparam ArrowColor #999999
 skinparam defaultBorderColor #666666
 
-skinparam defaultFontColor #888888
+skinparam defaultFontColor #666666
 skinparam defaultFontName Helvetica
 skinparam defaultFontSize 12
 skinparam defaultTextAlignment center
