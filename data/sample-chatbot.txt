@@ -5,22 +5,28 @@ skinparam shadowing false
 skinparam backgroundColor #ffffff
 skinparam roundCorner 10
 
-skinparam ArrowColor #AF7AC5
-skinparam ArrowThickness 0.5
-skinparam defaultBorderColor #666666
+skinparam Arrow {
+	Color #AF7AC5
+	Thickness 0.5
+}
 
-skinparam defaultFontColor #444444
-skinparam defaultFontName Helvetica
-skinparam defaultFontSize 12
-skinparam defaultTextAlignment center
+skinparam default {
+	BorderColor #666666
+	FontColor #444444
+	FontName Helvetica
+	FontSize 12
+	TextAlignment center
+}
 
-skinparam RectanglePadding 20
-skinparam RectangleBorderThickness 0.1
-skinparam RectangleFontColor #1D234E
-skinparam RectangleBackgroundColor #C1C6EC
-skinparam RectangleBorderColor #000000
-skinparam RectangleBackgroundColor<<" ">> #f6f6f6/f3f3f3
-skinparam RectangleBorderColor<<" ">> #ffffff
+skinparam Rectangle {
+	Padding 20
+	BorderThickness 0.1
+	FontColor #1D234E
+	BackgroundColor #C1C6EC
+	BorderColor #000000
+	BackgroundColor<<" ">> #f6f6f6/f3f3f3
+	BorderColor<<" ">> #ffffff
+}
 
 title **ChatBot High-Level Architecture**\n\nThis diagram shows the basic steps of how a bot app responds to a message"
 
