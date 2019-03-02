@@ -10,63 +10,85 @@ skinparam shadowing false
 skinparam backgroundColor #ffffff
 skinparam roundCorner 7
 
-skinparam ArrowColor #999999
-skinparam defaultBorderColor #666666
+skinparam Arrow {
+    Color #999999
+}
 
-skinparam defaultFontColor #444444
-skinparam defaultFontName Helvetica
-skinparam defaultFontSize 12
-skinparam defaultTextAlignment center
+skinparam default {
+    BorderColor #666666
+    FontColor #444444
+    FontName Helvetica
+    FontSize 12
+    TextAlignment center
+}
 
-skinparam BoxPadding 10
-skinparam BoxBorderThickness 0.5
-skinparam BoxBorderColor #CEDBE1
-skinparam BoxBackgroundColor #edf5f9
-    
-skinparam NoteFontColor #5F560B
-skinparam NoteBorderColor #C8B609
-skinparam NoteBackgroundColor #fff166
-skinparam NoteBorderThickness 1
+skinparam Box {
+    Padding 10
+    BorderThickness 0.5
+    BorderColor #CEDBE1
+    BackgroundColor #edf5f9
+}
 
-skinparam DatabaseBorderColor #202758
-skinparam DatabaseBorderThickness 0.4
-skinparam DatabaseBackgroundColor #D7D0F6
-skinparam DatabaseFontColor #202758
+skinparam Note {
+    FontColor #5F560B
+    BorderColor #C8B609
+    BackgroundColor #fff166
+    BorderThickness 1
+}
 
-skinparam ControlBorderColor #28451F
-skinparam ControlBorderThickness 1
-skinparam ControlBackgroundColor #C5E5BB
-skinparam ControlFontColor #000000
+skinparam Database {
+    BorderColor #202758
+    BorderThickness 0.4
+    BackgroundColor #D7D0F6
+    FontColor #202758
+}
 
-skinparam ActorBorderColor #3E4681
-skinparam ActorBorderThickness 1.5
-skinparam ActorBackgroundColor #ffffff
-skinparam ActorFontColor #3E4681
+skinparam Control {
+    BorderColor #28451F
+    BorderThickness 1
+    BackgroundColor #C5E5BB
+    FontColor #000000
+}
 
-skinparam RectanglePadding 20
-skinparam RectangleBorderThickness 0.5
-skinparam RectangleFontColor #1D234E
-skinparam RectangleBackgroundColor #C1C6EC
-skinparam RectangleBorderColor #202758
+skinparam Actor {
+    BorderColor #3E4681
+    BorderThickness 1.5
+    BackgroundColor #ffffff
+    FontColor #3E4681
+}
 
-skinparam ParticipantPadding 20
-skinparam ParticipantBorderThickness 1.5
-skinparam ParticipantFontColor #3E4681
-skinparam ParticipantBackgroundColor #ffffff
-skinparam ParticipantBorderColor #3E4681
+skinparam Rectangle {
+    Padding 20
+    BorderThickness 0.5
+    FontColor #1D234E
+    BackgroundColor #C1C6EC
+    BorderColor #202758
+}
 
-skinparam GroupFontColor #5F560B
-skinparam GroupBodyFontColor #5F560B
-skinparam GroupBorderColor #C8B609
-skinparam GroupBorderThickness 1
-skinparam GroupBackgroundFontColor #5F560B
-skinparam GroupBackgroundColor #fff166
-skinparam GroupBodyBackgroundColor #f9f9f9
+skinparam Participant {
+    Padding 20
+    BorderThickness 1.5
+    FontColor #3E4681
+    BackgroundColor #ffffff
+    BorderColor #3E4681
+}
 
-skinparam CollectionsBorderColor #233D4B
-skinparam CollectionsBorderThickness 0.5
-skinparam CollectionsBackgroundColor #2480AA
-skinparam CollectionsFontColor #ffffff
+skinparam Group {
+    FontColor #5F560B
+    BodyFontColor #5F560B
+    BorderColor #C8B609
+    BorderThickness 1
+    BackgroundFontColor #5F560B
+    BackgroundColor #fff166
+    BodyBackgroundColor #f9f9f9
+}
+
+skinparam Collections {
+    BorderColor #233D4B
+    BorderThickness 0.5
+    BackgroundColor #2480AA
+    FontColor #ffffff
+}
 
 skinparam sequence {
 
