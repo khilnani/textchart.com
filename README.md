@@ -1,8 +1,8 @@
 # textchart.com
 
-> A simple mobile first UML text editor for PlantUML
+> Diagrams as code - A simple mobile first editor for text based UML Diagrams
 
-To learn more about PlantUML, check out:
+To learn about the PlantUML text format, check out:
 
 - http://plantuml.com/
 - https://github.com/plantuml/plantuml-server
