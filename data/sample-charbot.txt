@@ -1,0 +1,43 @@
+
+left to right direction
+
+skinparam shadowing false
+skinparam backgroundColor #ffffff
+skinparam roundCorner 10
+
+skinparam ArrowColor #AF7AC5
+skinparam ArrowThickness 0.5
+skinparam defaultBorderColor #666666
+
+skinparam defaultFontColor #444444
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 12
+skinparam defaultTextAlignment center
+
+skinparam RectanglePadding 20
+skinparam RectangleBorderThickness 0.1
+skinparam RectangleFontColor #1D234E
+skinparam RectangleBackgroundColor #C1C6EC
+skinparam RectangleBorderColor #000000
+skinparam RectangleBackgroundColor<<" ">> #f6f6f6/f3f3f3
+skinparam RectangleBorderColor<<" ">> #ffffff
+
+title **ChatBot High-Level Architecture**\n\nThis diagram shows the basic steps of how a Rasa Core app responds to a message"
+
+rectangle "**Message In**" as in #eeeeee
+rectangle "**Message Out**" as out #85C1E9
+
+rectangle "Bot Core" as core <<" ">> {
+	rectangle "Interpreter" as int #ffffff
+	rectangle "Tracker" as trk #ffffff
+	rectangle "Action" as act #ffffff
+  rectangle "Policy" as plcy #ffffff
+}
+
+in -down-> int: <color:#884EA0>**1**</color>
+int -left-> trk: <color:#884EA0>**2**</color>
+trk -down-> plcy: <color:#884EA0>**3**</color>
+plcy -left-> act: <color:#884EA0>**4**</color>
+act -right-> trk: <color:#884EA0>**5**</color>
+act -up-> out: <color:#884EA0>**6**</color>
+
