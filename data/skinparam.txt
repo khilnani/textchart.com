@@ -70,7 +70,7 @@ skinparam CollectionsFontColor #ffffff
 
 skinparam sequence {
 
-    ArrowColor #6998B5
+    ArrowColor #666666
 
     LifeLineBorderColor #6998B5
     LifeLineBorderThickness 1
