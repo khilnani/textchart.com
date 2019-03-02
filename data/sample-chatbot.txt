@@ -22,7 +22,7 @@ skinparam RectangleBorderColor #000000
 skinparam RectangleBackgroundColor<<" ">> #f6f6f6/f3f3f3
 skinparam RectangleBorderColor<<" ">> #ffffff
 
-title **ChatBot High-Level Architecture**\n\nThis diagram shows the basic steps of how a Rasa Core app responds to a message"
+title **ChatBot High-Level Architecture**\n\nThis diagram shows the basic steps of how a bot app responds to a message"
 
 rectangle "**Message In**" as in #eeeeee
 rectangle "**Message Out**" as out #85C1E9
