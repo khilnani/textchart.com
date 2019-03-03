@@ -1,0 +1,33 @@
+start
+:TV Size;
+if (multiprocessor?) then (yes)
+  fork
+	:Treatment 1;
+  fork again
+	:Treatment 2;
+  end fork
+else (monoproc)
+  :Treatment 1;
+  :Treatment 2;
+endif
+:There are many
+many many TVs;
+if (A or B) then (Any)
+ if (A?) then (yes)
+   :A is true;
+ else (no)
+   :B is true;
+ endif
+ :here, A or B are <b>true</b>;
+else (Neither)
+:neither is true;
+endif
+repeat
+  :read data;
+  :generate diagrams;
+repeat while (more data?)
+while (data available?) is (available)
+  :read data;
+  :generate diagrams;
+endwhile (condition)
+stop
