@@ -1,17 +1,33 @@
+|Lane 1|
 start
 :TV Size;
-if (multiprocessor?) then (yes)
+note right
+  This note is on several
+  //lines// and can
+  contain <b>HTML</b>
+  ====
+  * Calling the method ""foo()"" is prohibited
+end note
+-[#green,dashed]-> The text can
+  also be on several lines
+  and **very** long...;
+#Yellow:if (multiprocessor?) then (yes)
   fork
-	:Treatment 1;
+	#HotPink:Treatment 1|
   fork again
-	:Treatment 2;
+	:Treatment 2]
   end fork
 else (monoproc)
-  :Treatment 1;
-  :Treatment 2;
+  |#CCCCCC|Lane 2|
+	partition "Hello" {
+    :Treatment 1;
+    :Treatment 2;
+  }
+  detach
 endif
+|Lane 1|
 :There are many
-many many TVs;
+many many TVs/
 if (A or B) then (Any)
  if (A?) then (yes)
    :A is true;
