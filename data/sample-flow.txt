@@ -18,8 +18,8 @@ end note
 	:Treatment 2]
   end fork
 else (monoproc)
-  |#CCCCCC|Lane 2|
-	partition "Hello" {
+  |#EEEEEE|Lane 2|
+	partition "Hello" #LightSkyBlue {
     :Treatment 1;
     :Treatment 2;
   }
