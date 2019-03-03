@@ -1,16 +1,26 @@
+skinparam shadowing false
+skinparam backgroundColor #ffffff
+skinparam roundCorner 10
+
+skinparam Arrow {
+	Color #AF7AC5
+	Thickness 0.5
+  ArrowMessageAlign center
+}
+
 skinparam activity {
   ArrowColor #333333
   ArrowMessageAlign center
 	BackgroundColor #44ddee
-  BorderThickness 0.1
-  BorderColor #aaaaaa
+  BorderThickness 2
+  BorderColor #aa00ff
 
 }
 
 skinparam activityDiamond {
     BackgroundColor red
     BorderColor blue
-    FontSize 24
+    FontSize 20
 }
 
 skinparam swimlane {
