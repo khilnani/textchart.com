@@ -1,3 +1,29 @@
+skinparam activity {
+  ArrowColor #333333
+  ArrowMessageAlign center
+	BackgroundColor #44ddee
+  BorderThickness 0.1
+  BorderColor #aaaaaa
+
+}
+
+skinparam activityDiamond {
+    BackgroundColor red
+    BorderColor blue
+    FontSize 24
+}
+
+skinparam swimlane {
+  BorderThickness 1
+  TitleFontColor black
+  TitleFontSize 30
+  ' min width
+  width 300
+  ' width same (same width)
+}
+
+
+
 |Lane 1|
 start
 :TV Size;
