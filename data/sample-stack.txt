@@ -1,18 +1,82 @@
-rectangle "<size:45><&people></size>" as User #FFFFFF
-rectangle UI #FFE17C {
-	rectangle About #ffffff
-  rectangle Home #ffffff
-  rectangle Login #ffffff
-}
-rectangle Services #FFEDB0 {
-	rectangle Auth #ffffff
-	rectangle Content #ffffff
+
+top to bottom direction 
+
+skinparam shadowing false
+skinparam backgroundColor #ffffff
+skinparam roundCorner 10
+
+skinparam default {
+	BorderColor #666666
+	FontColor #444444
+	FontName Helvetica
+	FontSize 12
+	TextAlignment center
 }
 
-' #FFE17C, FFEDB0
+skinparam Arrow {
+	Color #777777
+	Thickness 0.5
+}
+
+skinparam rectangle {
+	Padding 20
+  FontColor #1D234E
+  BackgroundColor #ffffff
+  BorderThickness 0.5
+	BorderColor #666666
+	BackgroundColor<<" ">> #f6f6f6/f3f3f3
+  BorderThickness<<" ">> 2
+	BorderColor<<" ">> #e0e0e0
+}
+
+skinparam database {
+	Padding 20
+	BorderThickness 0.1
+  BackgroundColor #ffffff
+	BorderColor #aaaaaa
+}
+
+title **Web App High-Level Architecture**\n\nThis diagram shows the basic technology layers of a modern web app\n
+
+rectangle "<size:45><&people></size>" as User #FFFFFF
+
+rectangle UI <<" ">> {
+	rectangle About
+	rectangle Section #line.dashed
+	rectangle Home #line.dashed
+	rectangle Login
+}
+
+rectangle "APIs and Services" as Services <<" ">> {
+  rectangle "Events / Jobs" as Events #line.dotted
+	rectangle Content
+	rectangle Profile
+	rectangle Auth
+}
+
+rectangle Data <<" ">> {
+	database "ContentDB " as ContentDB
+  database "Config DB" as ConfigDB
+	database "User DB" as UserDB
+}
 
 User -[hidden]- Home
+User -[hidden]- Section
 
 Login --> Auth
+Home -[#333333;dotted]- Auth
+Section -[#333333;dotted]- Auth
+Home --> Profile
 Home --> Content
+Section --> Content
 About --> Content
+
+Auth --> UserDB
+Profile --> UserDB
+Content --> ContentDB
+
+Auth -[#333333;dotted]- ConfigDB
+Profile -[#333333;dotted]- ConfigDB
+Content -[#333333;dotted]- ConfigDB
+Events -[#333333;dotted]- ConfigDB
+
