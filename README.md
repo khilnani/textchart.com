@@ -25,7 +25,7 @@ To learn about the PlantUML text format, check out:
 > API code is in the `api` directory
 
 - Serverless - https://serverless.com
-- AWS Lambda - https://aws.amazon.com
+- AWS Lambda / DynamoDB - https://aws.amazon.com
 - Node.js - https://nodejs.org
 
 ### PlantUML Server
