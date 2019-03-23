@@ -10,7 +10,7 @@ To learn about the PlantUML text format, check out:
 
 ## Tools Used
 
-### Web
+### Website
 
 - JQuery - https://jquery.com
 - Bootstrap - https://getbootstrap.com
@@ -20,13 +20,21 @@ To learn about the PlantUML text format, check out:
 - UUID v4 - https://github.com/kelektiv/node-uuid
 - rawdeflate.js - https://github.com/johan/js-deflate
 
-### API
+### Data Storage API
 
 > API code is in the `api` directory
 
 - Serverless - https://serverless.com
 - AWS Lambda - https://aws.amazon.com
 - Node.js - https://nodejs.org
+
+### PlantUML Server
+
+> The `server` directory contains the docker compose file for the Plant UML image
+> from https://github.com/plantuml/plantuml-server
+
+- Docker - https://www.docker.com/
+- AWS ECS & ALB - https://aws.amazon.com/ecs/
 
 ## Dev Notes
 
