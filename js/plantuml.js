@@ -3,6 +3,8 @@
 var default_plantuml_skinparam = undefined;
 var deflater = undefined;
 
+//var server_url = "https://www.plantuml.com/plantuml";
+var server_url = "http://ec2-3-93-218-219.compute-1.amazonaws.com";
 var default_skin_path = 'data/skinparam.txt';
 var deflate_script = 'vendor/rawdeflate.js';
 
@@ -79,8 +81,8 @@ function done_deflating(e) {
     console.log('PlantUML: Encoded.');
 
 
-    var img_url = 'https://www.plantuml.com/plantuml/img/'+data;
-    var txt_url = 'https://www.plantuml.com/plantuml/txt/'+data;
+    var img_url = server_url + '/img/' + data;
+    var txt_url = server_url + '/txt/' + data;
 
     var curr_img_url = $('#uml_img').attr('src');
 
