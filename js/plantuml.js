@@ -4,7 +4,8 @@ var default_plantuml_skinparam = undefined;
 var deflater = undefined;
 
 //var server_url = "https://www.plantuml.com/plantuml";
-var server_url = "http://104.196.50.190";
+//var server_url = "http://104.196.50.190";
+var server_url = "https://0z3ldnt12i.execute-api.us-east-1.amazonaws.com/dev";
 //var server_url = "https://puml.textchart.com";
 
 var default_skin_path = 'data/skinparam.txt';

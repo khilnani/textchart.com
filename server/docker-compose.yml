@@ -8,3 +8,9 @@ services:
       PLANTUML_LIMIT_SIZE: 4096
     ports:
       - "80:8080"
+    logging:
+      driver: awslogs
+      options: 
+        awslogs-group: plantuml
+        awslogs-region: us-east-1
+        awslogs-stream-prefix: plantuml
