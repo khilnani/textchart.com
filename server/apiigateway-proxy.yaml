@@ -1,0 +1,48 @@
+openapi: "3.0.1"
+info:
+  title: "textdata"
+  version: "1.0.0"
+servers:
+- url: "https://0z3ldnt12i.execute-api.us-east-1.amazonaws.com/{basePath}"
+  variables:
+    basePath:
+      default: "/dev"
+paths:
+  /img/{id}:
+    get:
+      operationId: "get-png"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+            Content-Type:
+              schema:
+                type: "string"
+          content: {}
+      x-amazon-apigateway-integration:
+        uri: "http://104.196.50.190/img/{id}"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Content-Type: "integration.response.header.Content-Type"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            contentHandling: "CONVERT_TO_BINARY"
+        requestParameters:
+          integration.request.path.id: "method.request.path.id"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "GET"
+        type: "http"
+components: {}
+x-amazon-apigateway-binary-media-types:
+- "image/png"
+
