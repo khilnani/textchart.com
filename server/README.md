@@ -6,5 +6,5 @@
 ## Setup
 
 ```
-Web Request -https-> AWS API Gateway (Custom Domain) -http-> Google Cloud Kubernetes / AWS ECS
+Web -SSL-> AWS API Gateway -> GCP Kubernetes [Docker Image]
 ```

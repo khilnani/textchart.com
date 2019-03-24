@@ -34,7 +34,9 @@ To learn about the PlantUML text format, check out:
 > from https://github.com/plantuml/plantuml-server
 
 - Docker - https://www.docker.com/
-- AWS ECS & ALB - https://aws.amazon.com/ecs/
+- AWS API Gateway - https://aws.amazon.com/api-gateway/
+- Google Kubernnetes Engine - https://cloud.google.com/kubernetes-engine/
+
 
 ## Dev Notes
 
