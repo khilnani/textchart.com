@@ -35,7 +35,7 @@ To learn about the PlantUML text format, check out:
 
 - Docker - https://www.docker.com/
 - AWS API Gateway - https://aws.amazon.com/api-gateway/
-- Google Kubernnetes Engine - https://cloud.google.com/kubernetes-engine/
+- Google Kubernetes Engine - https://cloud.google.com/kubernetes-engine/
 
 
 ## Dev Notes
