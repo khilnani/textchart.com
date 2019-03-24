@@ -24,6 +24,10 @@ kubectl get service textchart
 ## Update image
 kubectl set image deployment/textchart textchart=plantuml/plantuml-server:jetty
 
+## List and delete a pod
+# kubectl get pods
+# kubectl delete pod ID
+
 ## Scale up
 # kubectl scale deployment textchart --replicas=3
 # kubectl get deployment textchart
