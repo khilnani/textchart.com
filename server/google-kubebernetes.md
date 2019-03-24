@@ -25,7 +25,7 @@ gcloud compute instances list
 ```
 kubectl run textchart --image=plantuml/plantuml-server:jetty --port 8080
   or
-kubectl create -f deployment.yml
+kubectl create -f google-deployment.yml
 ```
 
 - Create Load Balancer
