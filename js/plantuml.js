@@ -3,9 +3,6 @@
 var default_plantuml_skinparam = undefined;
 var deflater = undefined;
 
-var server_url = "https://www.plantuml.com/plantuml";
-// var server_url = "https://plantuml.textchart.com";
-
 var default_skin_path = 'data/skinparam.txt';
 var deflate_script = 'vendor/rawdeflate.js';
 
