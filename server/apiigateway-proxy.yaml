@@ -1,12 +1,9 @@
 openapi: "3.0.1"
 info:
-  title: "textdata"
+  title: "textchart"
   version: "1.0.0"
 servers:
-- url: "https://0z3ldnt12i.execute-api.us-east-1.amazonaws.com/{basePath}"
-  variables:
-    basePath:
-      default: "/dev"
+- url: "https://plantuml.textchart.com"
 paths:
   /img/{id}:
     get:
@@ -29,13 +26,13 @@ paths:
                 type: "string"
           content: {}
       x-amazon-apigateway-integration:
-        uri: "http://104.196.50.190/img/{id}"
+        uri: "http://IP/img/{id}"
         responses:
           default:
             statusCode: "200"
             responseParameters:
               method.response.header.Content-Type: "integration.response.header.Content-Type"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Origin: "'*.textchart.com'"
             contentHandling: "CONVERT_TO_BINARY"
         requestParameters:
           integration.request.path.id: "method.request.path.id"
@@ -45,4 +42,4 @@ paths:
 components: {}
 x-amazon-apigateway-binary-media-types:
 - "image/png"
-
+:
