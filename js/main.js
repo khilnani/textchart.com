@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////
 
-var api_url = 'https://7rn7ut09wh.execute-api.us-east-1.amazonaws.com/dev/textchart';
+var api_url = 'https://api.textchart.com';
 var cm = undefined;
 var default_sample_uml = 'data/sample-seq.txt';
 

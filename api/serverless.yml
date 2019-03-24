@@ -17,6 +17,15 @@ provider:
           Resource: "*"
     environment:
         DDB_TABLE: textchart-saved-data-${opt:stage, self:provider.stage}-v0.0
+plugins:
+    - serverless-domain-manager
+custom:
+    customDomain:
+        domainName: api.textchart.com
+        basePath: ''
+        stage: ${self:provider.stage}
+        createRoute53Record: true
+        endpointType: 'regional'
 package:
     exclude:
         - .npmignore
@@ -29,7 +38,7 @@ functions:
         timeout: 30
         events:
             - http:
-                path: textchart/read
+                path: read
                 method: any
                 cors: true
                 private: false
@@ -39,7 +48,7 @@ functions:
         timeout: 30
         events:
             - http:
-                path: textchart/save
+                path: save
                 method: any
                 cors: true
                 private: false
