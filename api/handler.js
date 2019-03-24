@@ -12,8 +12,8 @@ const send_response = (body, callback, statusCode) => {
         statusCode: (statusCode) ? statusCode : 200,
         headers: {
             'Content-Type': "application/json",
-            //"Access-Control-Allow-Origin" : "textchart.com",
-            "Access-Control-Allow-Origin" : "*",
+            "Access-Control-Allow-Origin" : "https://textchart.com",
+            //"Access-Control-Allow-Origin" : "*",
         },
         body: JSON.stringify(body),
     };

@@ -5,7 +5,7 @@
   "main": "handler.js",
   "scripts": {
     "setup": "npx serverless create_domain",
-    "deploy": "npx serverless deploy",
+    "deploy": "chmod 755 -R node_modules/ && chmod 755 *.js && npx serverless deploy",
     "info": "npx serverless info",
     "log-read": "npx serverless logs -f read -t --startTime 1m",
     "log-save": "npx serverless logs -f save -t --startTime 1m",
