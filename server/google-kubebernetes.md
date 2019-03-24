@@ -67,7 +67,7 @@ kubectl scale deployment textchart --replicas=3
 ```
 
 - Delete everything
-``
+```
 kubectl delete service textchart
 cloud container clusters delete textchart
 ```
