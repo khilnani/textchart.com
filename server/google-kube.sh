@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-# Based on https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
+# https://kubernetes.io/docs/reference/kubectl/cheatsheet/#interacting-with-running-pods 
+# https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands
+# https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#define-a-liveness-command
+# https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 
 # Setup
 gcloud config set compute/zone us-east1
