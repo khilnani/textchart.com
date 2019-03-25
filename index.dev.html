@@ -18,10 +18,14 @@
   </head>
   <body>
     <div class="container-fluid ht-100">
-        <div id="notificationBanner" class="alert alert-success alert-dismissible fade hide d-none" role="alert">
-          <strong><span id="title">Success.</span></strong> 
-          <span id="message"></span>
+      <div id="notificationBanner" class="d-none">
+        <div style="padding: 5px;">
+          <div id="innerNotificationBanner" class="alert alert-success alert-dismissible fade hide" role="alert">
+            <strong><span id="title">Success.</span></strong> 
+            <span id="message"></span>
+          </div>
         </div>
+      </div>
       <div class="row ht-100">
         <div class="col-xs-6 col-sm-5 ht-100">
           <h4>
@@ -162,11 +166,12 @@
     window._alert = window.alert;
     window.alert = function (msg) {
       $('#notificationBanner #title').text(msg);
-      $('#notificationBanner').removeClass("hide").removeClass('d-none').addClass('d-block').addClass("show");
+      $('#notificationBanner').removeClass("d-none").addClass("d-block");
+      $('#innerNotificationBanner').removeClass("hide").addClass("show");
       setTimeout(function(){ 
         $('#notificationBanner').removeClass("show").addClass("hide");
         setTimeout(function(){ 
-          $('#notificationBanner').removeClass("d-block").addClass("d-none");
+          $('#innerNotificationBanner').removeClass("d-block").addClass("d-none");
         }, 500);
       }, 2000);
     }
