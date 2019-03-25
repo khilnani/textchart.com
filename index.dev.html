@@ -164,6 +164,15 @@
     //var server_url = "https://www.plantuml.com/plantuml";
     
     window._alert = window.alert;
+    
+    window.alert = function(msg) {
+      bootbox.alert({
+        message: msg,
+        closeButton: false,
+        backdrop: true
+      });
+    }
+    
     window.alert = function (msg) {
       $('#notificationBanner #title').text(msg);
       $('#notificationBanner').removeClass("d-none").addClass("d-block");
