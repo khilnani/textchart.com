@@ -32,6 +32,17 @@ body {
      height: 100%;
 }
 
+.bootbox_alert #message {
+}
+
+.bootbox_alert_warn #message {
+    font-weight: bold;
+}
+
+.bootbox_alert_rror #message {
+    font-weight: bold;
+}
+
 #notificationBanner {
     position: fixed;
     top: 0;
