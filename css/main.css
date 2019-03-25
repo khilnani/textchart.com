@@ -36,8 +36,12 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    margin: 20px;
+    width: 100%;
     z-index: 999999;
+}
+
+#innerNotificationBanner {
+    margin: 0 auto;
 }
 
 #loadingModal .modal-dialog {
