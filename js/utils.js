@@ -58,8 +58,8 @@ function bb_alert_error(msg) {
     bootbox.dialog({
         title: 'Error',
         message: '<p id="message" class="text-danger">' + msg + '</p>',
-        onEscape: false,
-        backdrop: false,
+        onEscape: true,
+        backdrop: true,
         size: 'large',
         className: 'bootbox_alert_error'
     });
