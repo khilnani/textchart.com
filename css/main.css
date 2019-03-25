@@ -32,6 +32,14 @@ body {
      height: 100%;
 }
 
+.display-none {
+     display: none;
+}
+
+.display-block {
+     display: block;
+}
+
 #loadingModal .modal-dialog {
     display: table;
     position: relative;
