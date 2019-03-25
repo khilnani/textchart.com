@@ -35,7 +35,6 @@ function b64DecodeUnicode(str) {
 function bb_alert(msg) {
     bootbox.dialog({
         message: '<p id="message" class="text-secondary">' + msg + '</p>',
-        closeButton: true,
         onEscape: true,
         backdrop: true,
         className: 'bootbox_alert'
@@ -45,7 +44,6 @@ function bb_alert(msg) {
 function bb_alert_warn(msg) {
     bootbox.dialog({
         message: '<p id="message" class="text-warning">' + msg + '</p>',
-        closeButton: true,
         onEscape: true,
         backdrop: true,
         className: 'bootbox_alert_warn'
@@ -55,7 +53,6 @@ function bb_alert_warn(msg) {
 function bb_alert_error(msg) {
     bootbox.dialog({
         message: '<p id="message" class="text-danger">' + msg + '</p>',
-        closeButton: true,
         onEscape: false,
         backdrop: false,
         className: 'bootbox_alert_error'
