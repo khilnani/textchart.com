@@ -169,9 +169,9 @@
       $('#notificationBanner').removeClass("d-none").addClass("d-block");
       $('#innerNotificationBanner').removeClass("hide").addClass("show");
       setTimeout(function(){ 
-        $('#notificationBanner').removeClass("show").addClass("hide");
+        $('#innerNotificationBanner').removeClass("show").addClass("hide");
         setTimeout(function(){ 
-          $('#innerNotificationBanner').removeClass("d-block").addClass("d-none");
+          $('#notificationBanner').removeClass("d-block").addClass("d-none");
         }, 500);
       }, 2000);
     }
