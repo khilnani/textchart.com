@@ -169,8 +169,9 @@
     
     window.alert = function(msg) {
       bootbox.dialog({
-        message: msg,
+        message: '<p>' + msg + '</p>',
         closeButton: false,
+        onEscape: true,
         backdrop: true
       });
     }
