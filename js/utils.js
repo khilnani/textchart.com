@@ -27,8 +27,42 @@ function b64DecodeUnicode(str) {
     }).join(''));
 }
 
-/*
+///////////////////////////////////////////////////////
+// http://bootboxjs.com/documentation.html#bb-dialog
+///////////////////////////////////////////////////////
 
+
+function bb_alert(msg) {
+    bootbox.dialog({
+        message: '<p>' + msg + '</p>',
+        closeButton: false,
+        onEscape: true,
+        backdrop: true,
+        className: 'bootbox_alert'
+    });
+}
+
+function bb_alert_error(msg) {
+    bootbox.dialog({
+        message: '<p>' + msg + '</p>',
+        closeButton: false,
+        onEscape: true,
+        backdrop: true,
+        className: 'bootbox_alert_error'
+    });
+}
+
+/* result is a boolean; true = OK, false = Cancel*/
+function bb_confirm(msg, callback) {
+    bootbox.confirm({ 
+        message: '<p>' + msg + '</p>',
+        size: "small",
+        callback: callback,
+        className: 'bootbox_confirm'
+    });
+}
+
+/*
 <div id="notificationBanner" class="d-none">
     <div style="padding: 5px;">
       <div id="innerNotificationBanner" class="alert alert-success alert-dismissible fade hide" role="alert">
