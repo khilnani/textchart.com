@@ -14,6 +14,7 @@ To learn about the PlantUML text format, check out:
 
 - JQuery - https://jquery.com
 - Bootstrap - https://getbootstrap.com
+- Bootbox - http://bootboxjs.com/
 - PlantUML - https://fontawesome.com
 - CodeMirror - https://codemirror.net
 - Font Awesome - https://fontawesome.com
