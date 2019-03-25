@@ -18,14 +18,6 @@
   </head>
   <body>
     <div class="container-fluid ht-100">
-      <div id="notificationBanner" class="d-none">
-        <div style="padding: 5px;">
-          <div id="innerNotificationBanner" class="alert alert-success alert-dismissible fade hide" role="alert">
-            <strong><span id="title">Success.</span></strong> 
-            <span id="message"></span>
-          </div>
-        </div>
-      </div>
       <div class="row ht-100">
         <div class="col-xs-6 col-sm-5 ht-100">
           <h4>
@@ -164,35 +156,11 @@
     var api_url = 'https://api.textchart.com';
     var server_url = "https://plantuml.textchart.com";
     //var server_url = "https://www.plantuml.com/plantuml";
-    
-    window._alert = window.alert;
-    
-    window.alert = function(msg) {
-      bootbox.dialog({
-        message: '<p>' + msg + '</p>',
-        closeButton: false,
-        onEscape: true,
-        backdrop: true
-      });
-    }
-    /*
-    window.alert = function (msg) {
-      $('#notificationBanner #title').text(msg);
-      $('#notificationBanner').removeClass("d-none").addClass("d-block");
-      $('#innerNotificationBanner').removeClass("hide").addClass("show");
-      setTimeout(function(){ 
-        $('#innerNotificationBanner').removeClass("show").addClass("hide");
-        setTimeout(function(){ 
-          $('#notificationBanner').removeClass("d-block").addClass("d-none");
-        }, 500);
-      }, 2000);
-    }
-    */
   </script>
   
-  <script src="js/utils.js" integrity="sha384-aCGy0RItN/95iao6cnulUKeK00sTSu5EHaHlnD09Zcpoqg03yHqz54T/5WtM1A18" crossorigin="anonymous"></script>
+  <script src="js/utils.js"></script>
   <script src="js/plantuml.js" integrity="sha384-jeOrgvcUjYmtMh9rgOLYrS+DQiF1TjTFDpnLKC14pTggQQF86ZKo/Vl/R+s2VWkK" crossorigin="anonymous"></script>
-  <script src="js/main.js" integrity="sha384-fmcw61YhnzCfCW00Y2nXQxcSKv3qxRvfMKDKDDpb2IGNU3C0xJioNr79yVJc1jUI" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
