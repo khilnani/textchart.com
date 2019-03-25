@@ -39,7 +39,7 @@ function bb_alert(msg) {
         onEscape: true,
         backdrop: true,
         size: 'large',
-        className: 'bootbox_alert'
+        className: 'alert-success'
     });
 }
 
@@ -50,7 +50,7 @@ function bb_alert_warn(msg) {
         onEscape: true,
         backdrop: true,
         size: 'large',
-        className: 'bootbox_alert_warn'
+        className: 'alert-warning'
     });
 }
 
@@ -61,7 +61,7 @@ function bb_alert_error(msg) {
         onEscape: true,
         backdrop: true,
         size: 'large',
-        className: 'bootbox_alert_error'
+        className: 'alert-danger'
     });
 }
 
