@@ -128,7 +128,7 @@ function read_from_db(id, callback) {
             refresh_uml();
             console.log('Read Data ERROR');
             console.log(e);
-            alert('Unfortunately, we could not find saved UML for ID: ' + id);
+            bb_alert_error('Unfortunately, we could not find saved UML for ID: ' + id);
         });
 
     } else {
@@ -169,11 +169,13 @@ function save_pre_check(id, uml_server) {
 
     if(uml_last_save.trim() != uml_server.trim()) {
         console.log('Precheck: FAIL');
-        if(confirm('Someone else saved UML while you were editing.\n\nConfirm overwrite?')) {
-            save_to_db_helper(id);
-        } else {
-            console.log('Precheck: ABORT');
-        }
+        bb_confirm('Someone else saved UML while you were editing.\n\nConfirm overwrite?', function (r) {
+            if(r) {
+                save_to_db_helper(id);
+            } else {
+                console.log('Precheck: ABORT');
+            }
+        });
     } else {
         console.log('Precheck: PASS. All clear to save.');
         save_to_db_helper(id);
@@ -205,7 +207,7 @@ function save_to_db_helper(id, uml) {
         console.log(data);
         var s = data['status'];
         //alert(s);
-        alert('UML Saved.');
+        bb_alert('UML Saved.');
         // keep to check if someone edits behind the scenes.
         set_last_saved_uml(id, uml);
         // update
@@ -216,7 +218,7 @@ function save_to_db_helper(id, uml) {
         loading_hide();
         console.log('Save Data ERROR');
         console.log(e);
-        alert('Error Saving data: ' + JSON.stringify(e));
+        bb_alert_error('Error Saving data: ' + JSON.stringify(e));
     });
 }
 ///////////////////////////////////////////////////////
@@ -360,11 +362,13 @@ $(function() {
     $('#revert-btn').on('click', function () {
         var id = qs('id');
         if(id) {
-            if(confirm('Revert to the last saved version?')) {
-                load_uml();
-            }
+            bb_confirm('Revert to the last saved version?', function (r) {
+                if(r) {
+                    load_uml();
+                }
+            });
         } else {
-            alert('No prior saved version exists. Please save first :)');
+            bb_alert_warn('No prior saved version exists. Please save first :)');
         }
     });
     // Enable save button
@@ -374,9 +378,11 @@ $(function() {
         if(id) {
             msg = 'Save to the server with ID: ' + id;
         } 
-        if(confirm(msg)) {
-            save_to_db();
-        }
+        bb_confirm(msg, function (r) {
+            if(r) {
+                save_to_db();
+            }
+        });
     });
 });
 
