@@ -42,6 +42,16 @@ function bb_alert(msg) {
     });
 }
 
+function bb_alert_warn(msg) {
+    bootbox.dialog({
+        message: '<p>' + msg + '</p>',
+        closeButton: false,
+        onEscape: true,
+        backdrop: true,
+        className: 'bootbox_alert_warn'
+    });
+}
+
 function bb_alert_error(msg) {
     bootbox.dialog({
         message: '<p>' + msg + '</p>',
