@@ -33,13 +33,16 @@ body {
 }
 
 .bootbox_alert #message {
+    white-space: nowrap;
 }
 
 .bootbox_alert_warn #message {
+    white-space: nowrap;
     font-weight: bold;
 }
 
-.bootbox_alert_rror #message {
+.bootbox_alert_error #message {
+    white-space: nowrap;
     font-weight: bold;
 }
 
