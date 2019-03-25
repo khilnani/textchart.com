@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Font Awesome //-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
+    <!-- Bootstrap CSS //-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+    <!-- Codemirror CSS //-->
+    <link rel="stylesheet" href="vendor/codemirror/codemirror.css"/>
+    <link rel="stylesheet" href="vendor/codemirror/theme/material.css"/>
+    <link rel="stylesheet" href="vendor/codemirror/addon/hint/show-hint.css"/>
+    <!-- custom CSS //-->
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>TextChart - Mobile optimized PlantUML (text based UML) diagram editor</title>
+  </head>
+  <body>
+    <div class="container-fluid ht-100">
+      <div class="row ht-100">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="col-xs-6 col-sm-5 ht-100">
+          <h4>
+              <!-- <span class="d-inline d-sm-inline d-md-none d-lg-inline">TextChart</span> //-->
+              <span>TextChart</span>
+              &nbsp;
+              <div class="btn-group float-right" role="group" aria-label="Informational Links">
+                  <!--
+                  <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#linkModal"><i class="fas fa-share"></i></button>
+                  //-->
+                  <button type="button" class="btn btn-outline-info btn-sm" data-toggle="tooltip" title="Revert to last saved version" id="revert-btn"><i class="fas fa-undo"></i></button>
+                  <button type="button" class="btn btn-outline-info btn-sm" data-toggle="tooltip" title="Save to server" id="save-btn"><i class="fas fa-save"></i></button>
+                  <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#infoModal"><i class="fas fa-info-circle"></i></button>
+              </div>
+          </h4>
+          <div class="card d-block">
+              <div class="card-body">
+                  <strong>TextChart</strong> is a mobile optimized text based UML diagram editor. 
+                  Edit the <a href="http://plantuml.com" target="_blank">PlantUML</a> 
+                  below to begin.
+              </div>
+          </div>
+          <textarea
+            id="code" name="code"
+            class="form-control collapse show"
+            aria-label="With textarea">
+          </textarea>
+        </div>
+
+        <div class="col-xs-6 col-sm-7 ht-100">
+          <h4>Diagram
+
+            <div class="btn-group float-right" role="group" aria-label="Diagram Links">
+              <a role="button" class="float-right btn btn-info btn-sm" id="uml_link" href="javascript:void(0);" target="_blank" data-toggle="tooltip" title="View an ASCII text version of the diagram">View ASCII</a>
+            </div>
+          </h4>
+
+          <div class="card">
+            <div class="card-body" role="alert">
+              <img id="uml_img" src='' class="mw-100"/>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-2" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="infoModalLabel">Info</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              This website allows a user to use the <a href="http://plantuml.com" target="_blank">PlantUML</a>
+                text based UML definition format to generate UML diagrams. Thanks to the <a href="http://plantuml.com" target="_blank">PlantUML</a> 
+              folks for making their code available!
+            </p>
+            <p>
+              Useful PlantUML Links:
+              <ul style="list-style-type:disc;">
+                <li><a href="http://plantuml.com/sitemap-language-specification" target="_blank">Language Reference</a></li>
+                <li><a href="http://plantuml.com/skinparam" target="_blank">Skin/Theme Parameters</a></li>
+                <li><a href="http://plantuml.com/color" target="_blank">Colors Names</a></li>
+                <li><a href="http://plantuml.com/openiconic" target="_blank">Built-in Icons</a></li>
+                <li><a href="https://www.iconfinder.com" target="_blank">IconFinder.com</a></li>
+                <li><a href="https://thenounproject.com" target="_blank">The Noun Project Icons</a></li>
+              </ul>
+            </p>
+            <p>
+              <em>The source code for this website is located at <a href="https://github.com/khilnani/textchart.com" target="_blank">http://github.com/khilnani/textchart</a>. Feel free to suggest improvements or report bugs.</em>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Short Link Modal -->
+  <div class="modal fade" id="linkModal" tabindex="-1" role="dialog" aria-labelledby="linkModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="linkModalLabel">Share Link</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Right click or copy the short link below to return to the website with current UML code pre-filled.
+          </p>
+          <div class="alert alert-secondary" role="alert">
+            <pre><a id="page_link" class="alert-link" href="javascript:void(0);" target="_blank"></a></pre>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Modal //-->
+  <div id="loadingModal" class="modal" data-backdrop="static" data-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content" style="width: 48px">
+            <span class="fas fa-spinner fa-spin fa-3x"></span>
+        </div>
+    </div>
+  </ div>
+
+  <!-- CDN - jquery, popper, then bootstrap //-->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- hosted vendor //-->
+  <script src="vendor/uuidv4.js" integrity="sha384-zqmTTGa3Ye+YgunY8nlQr/zFUC8OnY+3khXxRdTCXhNqQSOOmBFxmFk8PYA58ztY" crossorigin="anonymous"></script>
+  <script src="vendor/rawdeflate.js" integrity="sha384-8ctWrSjpDOU8qPcg41F9k0xviBLapjGShPPKR9ybY8JesBIcq7Dj4gygAIlaAAxZ" crossorigin="anonymous"></script>
+  <script src="vendor/codemirror/codemirror.js" integrity="sha384-x1QKAzaJ+REY7xvp6SmcWnnyQdLJJaudAcV2KGSzDytetEOxiaYyaZ5PFLzBuvwR" crossorigin="anonymous"></script>
+  <script src="vendor/codemirror/mode/yaml/yaml.js" integrity="sha384-l48K/HCYZSMTlkax7ehvElLseRlv9WLwXO1OI3/P+zY386PPTtgxwJfHp6qEAOzz" crossorigin="anonymous"></script>
+  <script src="vendor/codemirror/addon/hint/show-hint.js" integrity="sha384-qH3VQu2iED065AnqCGEygvfLauVG4rZRQHCcYcGSjnvZX6+ZQb52SjkZhYT+28Cc" crossorigin="anonymous"></script>
+  <script src="vendor/codemirror/addon/hint/anyword-hint.js" integrity="sha384-bCRrCOs+eQO+9b7CJDcv0nfu6l+0VWgcUXXHvHaGYcCh/epjRhSKu4Appq2tu6Sa" crossorigin="anonymous"></script>
+  <!-- custom //-->
+  <script type="text/javascript">
+    var default_sample_uml = 'data/sample-seq.txt';
+    var api_url = 'https://api.textchart.com';
+    var server_url = "https://plantuml.textchart.com";
+    //var server_url = "https://www.plantuml.com/plantuml";
+  </script>
+  <script src="js/utils.js" integrity="sha384-aCGy0RItN/95iao6cnulUKeK00sTSu5EHaHlnD09Zcpoqg03yHqz54T/5WtM1A18" crossorigin="anonymous"></script>
+  <script src="js/plantuml.js" integrity="sha384-jeOrgvcUjYmtMh9rgOLYrS+DQiF1TjTFDpnLKC14pTggQQF86ZKo/Vl/R+s2VWkK" crossorigin="anonymous"></script>
+  <script src="js/main.js" integrity="sha384-fmcw61YhnzCfCW00Y2nXQxcSKv3qxRvfMKDKDDpb2IGNU3C0xJioNr79yVJc1jUI" crossorigin="anonymous"></script>
+
+</body>
+</html>
