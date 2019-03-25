@@ -34,27 +34,33 @@ function b64DecodeUnicode(str) {
 
 function bb_alert(msg) {
     bootbox.dialog({
+        title: 'Info',
         message: '<p id="message" class="text-secondary">' + msg + '</p>',
         onEscape: true,
         backdrop: true,
+        size: 'large',
         className: 'bootbox_alert'
     });
 }
 
 function bb_alert_warn(msg) {
     bootbox.dialog({
+        title: 'Warning',
         message: '<p id="message" class="text-warning">' + msg + '</p>',
         onEscape: true,
         backdrop: true,
+        size: 'large',
         className: 'bootbox_alert_warn'
     });
 }
 
 function bb_alert_error(msg) {
     bootbox.dialog({
+        title: 'Error',
         message: '<p id="message" class="text-danger">' + msg + '</p>',
         onEscape: false,
         backdrop: false,
+        size: 'large',
         className: 'bootbox_alert_error'
     });
 }
@@ -64,6 +70,7 @@ function bb_confirm(msg, callback) {
     bootbox.confirm({ 
         message: '<p>' + msg + '</p>',
         callback: callback,
+        size: 'large',
         className: 'bootbox_confirm'
     });
 }
