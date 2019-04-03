@@ -1,33 +1,50 @@
+'https://textchart.com/?id=315c0c0c-d90c-4e9d-b4f5-8633d05bd800#
+
 title HelpMeNow
 
 package "HelpMeNow" #FFFFEE {
 	package "Hi 1" #FFFFFF{
     interface "Data Access" as DA1 #EEEEEE
+    card "Card" as C
 	}
   
 	node "Node" #FFFFFF{
     interface "Data Access" as DA2 #EEEEEE
-
 	}
-  
+
 	database "DB" #FFFFFF{
     interface "Data Access" as DA3 #EEEEEE
 	}
-  
-	rectangle "Hi" #FFFFFF{
-  
+
+	folder "Folder" #FFFFFF{
+    interface "Data Access" as DA4 #EEEEEE
+	}
+
+	rectangle "Rectangle" #FFFFFF{
+    interface "Data Access" as DA5 #EEEEEE
+	}
+
+
+	frame "Hi" #FFFFFF{
+
     interface "Data Access" as DA #EEEEEE
 		component "First Component" as FC #DDFFEE
-		Interface "HTTP" as HTTP #AAFFEE
+		file "HTTP" as HTTP #AAFFEE
+    artifact "Artifact" as A
+    queue "Celery" as CL
+    stack "Stackery" as ST
 
     DA --0)- FC
     FC ..> HTTP : use 
+    A ~~ ST
+    CL ==> A
+    CL -(0)-- FC
 
     note left of HTTP : Web Service only 
 
     note right of FC 
       A note can also be on several lines 
     end note 
-    
- }
+
+	}
 }
