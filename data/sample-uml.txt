@@ -1,15 +1,19 @@
-
 title HelpMeNow
 
-package "HelpMeNow" {
+package "HelpMeNow" #FFFFEE {
+	frame "Hi" #FFFFFF{
+  
+    interface "Data Access" as DA #EEEEEE
+		component "First Component" as FC #DDFFEE
+		Interface "HTTP" as HTTP #AAFFEE
 
-	[Consultar Chamados] --0)- [Interface]
-	[Manter Chamados] --(0- [SGBD]
+    DA --0)- FC
+    FC ..> HTTP : use 
 
-	[Logon] --(0- [SGBD]
-	[Consultar Chamados] -(0- [SGBD]
+    note left of HTTP : Web Service only 
 
-	[Logon] -0)-- [Interface]
-	[Manter Chamados] --0)-- [Interface]
-		
+    note right of FC 
+      A note can also be on several lines 
+    end note 
+ 	}
 }
