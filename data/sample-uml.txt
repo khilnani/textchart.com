@@ -1,7 +1,20 @@
 title HelpMeNow
 
 package "HelpMeNow" #FFFFEE {
-	frame "Hi" #FFFFFF{
+	package "Hi 1" #FFFFFF{
+    interface "Data Access" as DA1 #EEEEEE
+	}
+  
+	node "Node" #FFFFFF{
+    interface "Data Access" as DA2 #EEEEEE
+
+	}
+  
+	database "DB" #FFFFFF{
+    interface "Data Access" as DA3 #EEEEEE
+	}
+  
+	rectangle "Hi" #FFFFFF{
   
     interface "Data Access" as DA #EEEEEE
 		component "First Component" as FC #DDFFEE
@@ -15,5 +28,6 @@ package "HelpMeNow" #FFFFEE {
     note right of FC 
       A note can also be on several lines 
     end note 
- 	}
+    
+ }
 }
