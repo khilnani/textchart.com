@@ -87,14 +87,14 @@ function bb_confirm(msg, callback) {
 
 */
 function bootstrapBanner(msg) {
-  $('#notificationBanner #title').text(msg);
-  $('#notificationBanner').removeClass("d-none").addClass("d-block");
-  $('#innerNotificationBanner').removeClass("hide").addClass("show");
-  setTimeout(function(){ 
-    $('#innerNotificationBanner').removeClass("show").addClass("hide");
+    $('#notificationBanner #title').text(msg);
+    $('#notificationBanner').removeClass('d-none').addClass('d-block');
+    $('#innerNotificationBanner').removeClass('hide').addClass('show');
     setTimeout(function(){ 
-      $('#notificationBanner').removeClass("d-block").addClass("d-none");
-    }, 500);
-  }, 2000);
+        $('#innerNotificationBanner').removeClass('show').addClass('hide');
+        setTimeout(function(){ 
+            $('#notificationBanner').removeClass('d-block').addClass('d-none');
+        }, 500);
+    }, 2000);
 }
 ///////////////////////////////////////////////////////
