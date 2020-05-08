@@ -79,7 +79,7 @@ function done_deflating(e) {
     console.log('PlantUML: Encoded.');
 
 
-    var img_url = server_url + '/img/' + data;
+    var img_url = server_url + '/svg/' + data;
     var txt_url = server_url + '/txt/' + data;
 
     var curr_img_url = $('#uml_img').attr('src');
