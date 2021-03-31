@@ -1,0 +1,35 @@
+box "\nFront-end\n"
+	participant "User" as User 
+	participant "Web" as Web 
+end box
+box "\nBack-end\n"
+  participant "API" as API 
+  participant "Auth" as Auth 
+  participant "DB" as DB 
+end box
+
+User ->> Web: Request page
+activate Web
+Web ->> User: Home page
+User ->> Web: Login
+Note right of Auth: *<b>TODO</b>* Use Oauth2
+Web ->> Auth: Validate
+activate Auth
+opt Success
+    Auth ->> Web : Success message
+    Web ->> API: Get data
+    activate API
+    API ->> DB: Get data
+    activate DB
+    DB ->> API: Profile info
+    deactivate DB
+    API ->> Web: Profile info
+    deactivate API
+    Web ->> User: Profile page
+end
+opt Failure
+    Auth ->> Web: Error response
+    Web ->> User: Error page
+end
+deactivate Auth
+deactivate Web
