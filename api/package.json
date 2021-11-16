@@ -15,7 +15,7 @@
   },
   "author": "nik@khilnani.org",
   "dependencies": {
-    "aws-sdk": "^2.368.0"
+    "aws-sdk": "^2.814.0"
   },
   "devDependencies": {
     "serverless": "^1.34.1",
