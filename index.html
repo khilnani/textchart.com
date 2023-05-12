@@ -35,9 +35,18 @@
           </h4>
           <div class="card d-block">
               <div class="card-body">
-                  <strong>TextChart</strong> is a mobile optimized text based UML diagram editor. 
-                  Edit the <a href="http://plantuml.com" target="_blank">PlantUML</a> 
-                  below to begin.
+                  <p>
+                    <strong>TextChart</strong> is a mobile optimized text based UML diagram editor. 
+                    Edit the <a href="http://plantuml.com" target="_blank">PlantUML</a> 
+                    below to begin.
+                  </p>
+
+                  <p>
+                    Select a Sample UML: 
+                    <select id="samples_dropdown" class="form-select" aria-label="Select a Sample UML">
+                      <option disabled selected></option>
+                    </select>
+                  </p>
               </div>
           </div>
           <textarea
@@ -151,13 +160,6 @@
   <script src="vendor/bootbox.min.js" integrity="sha384-H6Mr24zzDo2xH7wBB9QKo5jhTBUbx0POPzlOFq9E1uP/LIGdvWbcXrEN5jFciUTg" crossorigin="anonymous"></script>
 
   <!-- custom //-->
-  <script type="text/javascript">
-    var default_sample_uml = 'data/sample-seq.txt';
-    var api_url = 'https://api.textchart.com';
-    //var server_url = "https://plantuml.textchart.com";
-    var server_url = "https://www.plantuml.com/plantuml";
-  </script>
-
   <script src="js/utils.js"></script>
   <script src="js/plantuml.js"></script>
   <script src="js/main.js"></script>

@@ -1,0 +1,26 @@
+[
+    {
+        "label": "Sequence",
+        "path": "data/samples/seq.txt"
+    },
+    {
+        "label": "Sequence with Images",
+        "path": "data/samples/seq-images.txt"
+    },
+    {
+        "label": "Mindmap",
+        "path": "data/samples/mindmap.txt"
+    },
+    {
+        "label": "Flow",
+        "path": "data/samples/flow.txt"
+    },
+    {
+        "label": "Web App",
+        "path": "data/samples/stack.txt"
+    },
+    {
+        "label": "Chatbot",
+        "path": "data/samples/chatbot.txt"
+    }
+]

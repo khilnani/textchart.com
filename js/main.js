@@ -1,6 +1,14 @@
 ///////////////////////////////////////////////////////
 
+var default_samples = 'data/samples/data.json';
+var api_url = 'https://api.textchart.com';
+//var server_url = "https://plantuml.textchart.com";
+var server_url = "https://www.plantuml.com/plantuml";
+
+
 var cm = undefined;
+var samples_list = undefined;
+var default_samples_index = 0;
 
 ///////////////////////////////////////////////////////
 
@@ -42,13 +50,59 @@ function loading_hide() {
 
 ///////////////////////////////////////////////////////
 
-function load_sample_uml() {
-    console.log('Loading Sample UML');
-    $.get(default_sample_uml, function(response) {
+function load_data() {
+    console.log('Loading Data JSON');
+    $.get(default_samples, function(response) {
+        samples_list = response;
+
+        console.log(samples_list);
+        console.log( typeof(response) );
+
+        for( var ea in samples_list) {
+            var option = $('<option />');
+            option.attr('value', samples_list[ea].path).text(samples_list[ea].label);
+            $('#samples_dropdown').append(option);
+        }
+
+        $('#samples_dropdown').change(function() {
+            display_selected_sample();
+        });
+        
+        load_uml();
+    }); 
+}
+
+function display_selected_sample() {
+    console.log('Display Selected Sample');
+
+    var selected = $('#samples_dropdown').find(':selected');
+    load_sample_uml(selected.text(), selected.val());
+
+}
+
+function load_sample_uml(label, path, skipPrompt) {
+    console.log('Loading Sample UML', path);
+
+    if(skipPrompt) {
+        _load_sample_uml(path);  
+    } else {
+        bb_confirm('Change UML to Sample \'' + label + '\'?', function (r) {
+            if(r) {
+                _load_sample_uml(path);  
+            }
+        });
+    }
+}
+
+function _load_sample_uml(path) {
+    console.log('Loading Sample UML Path', path);
+
+    $.get(path, function(response) {
         set_uml(response);
         refresh_uml();
-    });   
+    });
 }
+
 
 function refresh_uml() {
     console.log('Refresh UML: Changed');
@@ -253,7 +307,7 @@ function load_uml() {
             }            
             refresh_uml();
         } else {
-            load_sample_uml();
+            load_sample_uml(samples_list[default_samples_index].label, samples_list[default_samples_index].path, true);
         }
     }
 }
@@ -355,8 +409,8 @@ $(function() {
         update_share_link();
     });
 
-    // Update based on prior state in the URL, or DB
-    load_uml();
+    // load data and then uml
+    load_data();
 
     // Enable revert button
     $('#revert-btn').on('click', function () {

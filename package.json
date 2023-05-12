@@ -5,6 +5,7 @@
   "description": "A mobile first editor for text based UML diaggrams using PlantUML",
   "main": "js/main.js",
   "scripts": {
+    "start": "http-server -a 127.0.0.1 -p 8000 -c-1",
     "lint": "npx eslint js --fix || true",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/khilnani/textchart#readme",
   "devDependencies": {
-    "eslint": "^5.9.0"
+    "eslint": "^5.9.0",
+    "http-server": "^14.1.1"
   }
 }
