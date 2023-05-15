@@ -1,0 +1,27 @@
+title Class Diagram Example
+
+class Vehicle {
+	speed
+    direction
+	make
+    model
+	run()
+}
+class Car {
+    driver_name
+    road
+	run()
+}
+class Plane {
+    pilot_name
+    altitude
+	run()
+}
+class Ship {
+    captain_name
+    ocean
+	run()
+}
+Vehicle <|-- Car
+Vehicle <|-- Plane : inherits
+Vehicle <|-- Ship
