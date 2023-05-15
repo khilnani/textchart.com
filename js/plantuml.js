@@ -116,9 +116,7 @@ function compress(s) {
 ///////////////////////////////////////////////////////
 
 function display_plantuml_helper(uml, skin) {
-    if( uml.toLowerCase().indexOf('skinparam') == -1 && skin.indexOf('skinparam') > -1) {
-        uml = skin + '\n\n' +uml;
-    }
+    uml = skin + '\n\n' +uml;
     compress(uml);
 }
 

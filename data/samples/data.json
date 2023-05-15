@@ -1,43 +1,46 @@
 [
     {
-        "label": "Sequence",
+        "label": "Auth Sequence Diagram",
         "path": "data/samples/seq.txt"
     },
     {
-        "label": "Sequence with Images",
+        "label": "Auth Sequence Diagram with Images",
         "path": "data/samples/seq-images.txt"
     },
     {
-        "label": "Mindmap",
-        "path": "data/samples/mindmap.txt"
+        "label": "Web App Tech Stack",
+        "path": "data/samples/webapp.txt"
     },
     {
-        "label": "Flow",
+        "label": "Chatbot Flow",
+        "path": "data/samples/chatbot.txt"
+    },
+    {
+        "label": "Flow Diagram",
         "path": "data/samples/flow.txt"
     },
     {
-        "label": "State",
+        "label": "State Diagram",
         "path": "data/samples/state.txt"
+    },
+    {
+        "label": "Component Diagram",
+        "path": "data/samples/component.txt"
+    },
+    {
+        "label": "Deployment/System Architecture",
+        "path": "data/samples/deployment.txt"
+    },
+    {
+        "label": "Deployment/System Elements",
+        "path": "data/samples/deployment-elements.txt"
     },
     {
         "label": "Usecase",
         "path": "data/samples/usecase.txt"
     },
     {
-        "label": "Deployment",
-        "path": "data/samples/deployment.txt"
-    },
-    {
-        "label": "Deployment Elements",
-        "path": "data/samples/deployment-elements.txt"
-    },
-
-    {
-        "label": "Web App",
-        "path": "data/samples/webapp.txt"
-    },
-    {
-        "label": "Chatbot",
-        "path": "data/samples/chatbot.txt"
+        "label": "Mindmap",
+        "path": "data/samples/mindmap.txt"
     }
 ]
