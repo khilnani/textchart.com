@@ -43,9 +43,8 @@ deactivate Web
 legend right
   = Legend
   ----
-  |= Name |= Description |
-  | Web | Headless frontend |
-  | API | Application API |
-  | Auth | OAuth Identity |
-  | DB | Identity datastore |
+  * Web | Headless frontend
+  * API | Application API
+  * Auth | OAuth Identity
+  * DB | Identity datastore
 endlegend
