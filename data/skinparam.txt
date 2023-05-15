@@ -163,10 +163,18 @@ skinparam Database {
 }
 
 skinparam Control {
-    BorderColor #28451F
-    BorderThickness 1
-    BackgroundColor #C5E5BB
-    FontColor #000000
+    BorderThickness $LINE
+    BackgroundColor $GREY_LIGHT
+}
+
+skinparam Entity {
+    BorderThickness $LINE
+    BackgroundColor $GREY_LIGHT
+}
+
+skinparam Boundary {
+    BorderThickness $LINE
+    BackgroundColor $GREY_LIGHT
 }
 
 skinparam Actor {

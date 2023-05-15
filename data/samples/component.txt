@@ -1,5 +1,12 @@
 title Component Diagram Example
 
+skinparam interface {
+	BorderColor black
+	BackgroundColor #5e94de
+}
+
+skinparam ArrowColor black
+
 component user_mgmt [
     User Management Service
 ]
