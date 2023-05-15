@@ -36,12 +36,16 @@
         "path": "data/samples/deployment.txt"
     },
     {
-        "label": "Deployment/System Elements",
+        "label": "Deployment/System - Elements",
         "path": "data/samples/deployment-elements.txt"
     },
     {
-        "label": "Usecase",
+        "label": "Usecase - v1",
         "path": "data/samples/usecase.txt"
+    },
+    {
+        "label": "Usecase - v2",
+        "path": "data/samples/usecase2.txt"
     },
     {
         "label": "Mindmap",
