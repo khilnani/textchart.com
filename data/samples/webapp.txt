@@ -1,0 +1,51 @@
+
+top to bottom direction 
+
+title **Web App High-Level Architecture**
+
+note "This diagram shows the basic technology \nlayers of a modern web app" as N1
+
+caption Figure 1
+
+rectangle "<size:45><&people></size>" as User #FFFFFF
+
+rectangle UI  {
+	rectangle About
+	rectangle Section #line.dashed
+	rectangle Home #line.dashed
+	rectangle Login
+}
+
+rectangle "APIs and Services" as Services {
+  rectangle "Events / Jobs" as Events #line.dotted
+	rectangle Content
+	rectangle Profile
+	rectangle Auth
+}
+
+rectangle Data {
+	database "ContentDB " as ContentDB
+  database "Config DB" as ConfigDB
+	database "User DB" as UserDB
+}
+
+
+User -[hidden]- Home
+User -[hidden]- Section
+
+Login --> Auth
+Home -[#333333;dotted]- Auth
+Section -[#333333;dotted]- Auth
+Home --> Profile
+Home --> Content
+Section --> Content
+About --> Content
+
+Auth --> UserDB
+Profile --> UserDB
+Content --> ContentDB
+
+Auth -[#333333;dotted]- ConfigDB
+Profile -[#333333;dotted]- ConfigDB
+Content -[#333333;dotted]- ConfigDB
+Events -[#333333;dotted]- ConfigDB

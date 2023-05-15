@@ -1,38 +1,3 @@
-skinparam shadowing false
-skinparam backgroundColor #ffffff
-skinparam roundCorner 10
-
-skinparam Arrow {
-	Color #AF7AC5
-	Thickness 0.5
-  ArrowMessageAlign center
-}
-
-skinparam activity {
-  ArrowColor #333333
-  ArrowMessageAlign center
-	BackgroundColor #44ddee
-  BorderThickness 2
-  BorderColor #aa00ff
-
-}
-
-skinparam activityDiamond {
-    BackgroundColor red
-    BorderColor blue
-    FontSize 20
-}
-
-skinparam swimlane {
-  BorderThickness 1
-  TitleFontColor black
-  TitleFontSize 30
-  ' min width
-  width 300
-  ' width same (same width)
-}
-
-
 
 |Lane 1|
 start
@@ -47,15 +12,15 @@ end note
 -[#green,dashed]-> The text can
   also be on several lines
   and **very** long...;
-#Yellow:if (multiprocessor?) then (yes)
+if (multiprocessor?) then (yes)
   fork
-	#HotPink:Treatment 1|
+	:Treatment 1|
   fork again
 	:Treatment 2]
   end fork
 else (monoproc)
   |#EEEEEE|Lane 2|
-	partition "Hello" #LightSkyBlue {
+	partition "Hello" {
     :Treatment 1;
     :Treatment 2;
   }

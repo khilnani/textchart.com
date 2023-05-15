@@ -16,8 +16,25 @@
         "path": "data/samples/flow.txt"
     },
     {
+        "label": "State",
+        "path": "data/samples/state.txt"
+    },
+    {
+        "label": "Usecase",
+        "path": "data/samples/usecase.txt"
+    },
+    {
+        "label": "Deployment",
+        "path": "data/samples/deployment.txt"
+    },
+    {
+        "label": "Deployment Elements",
+        "path": "data/samples/deployment-elements.txt"
+    },
+
+    {
         "label": "Web App",
-        "path": "data/samples/stack.txt"
+        "path": "data/samples/webapp.txt"
     },
     {
         "label": "Chatbot",

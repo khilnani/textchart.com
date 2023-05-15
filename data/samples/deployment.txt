@@ -1,0 +1,43 @@
+
+package "Acme IT Services" <<test>> {
+    rectangle "Application Suites" as apps #fff {
+        rectangle ERP 
+        rectangle CRM <<test>>
+        rectangle "In-House Special App"
+    }
+    rectangle "Components" as components #fff {
+        rectangle "App Server" <<test>>
+        rectangle "Reverse Proxy"
+        database "Database" <<test>>
+        queue "Pub Sub Message Bus" <<test>>
+        rectangle "API Gateway" <<test>>
+    }
+    rectangle "Supporting Services" as sup_svces #fff {
+        rectangle AD <<test>>
+        rectangle DNS <<test>>
+        card DHCP
+        card NTP
+    }
+    folder Infrastructure as infra <<test>> #fff {
+        rectangle Network <<test>> {
+            queue Router
+            collections Switch <<test>>
+            storage Firewall <<test>>
+            rectangle "App Delivery Controller" <<test>>
+        }
+        rectangle Server <<i>>
+        file Storage <<test>>
+        cloud AWS
+    }
+    frame Physical as phy <<test>> #fff {
+        stack Power
+        stack Cooling
+    }
+}
+
+infra ---> phy
+sup_svces --> infra
+apps --> sup_svces
+apps --> components
+components --> sup_svces
+components --> infra

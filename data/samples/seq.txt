@@ -1,3 +1,9 @@
+
+title "Sequence Diagram"
+caption Figure 1
+
+center footer Generated for demonstration
+
 box "\nFront-end\n"
 	participant "User" as User 
 	participant "Web" as Web 
@@ -33,3 +39,12 @@ opt Failure
 end
 deactivate Auth
 deactivate Web
+
+legend right
+  = Legend
+  ----
+  |= Color |= Type |
+  |<#FF0000>| Type A class |
+  |<#00FF00>| Type B class |
+  |<#0000FF>| Type C class |
+endlegend

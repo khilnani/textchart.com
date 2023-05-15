@@ -1,9 +1,8 @@
+@startmindmap
+
 !$BGCOLOR = "transparent"
 
-!$BLACK = "#111111"
 !$WHITE = "#fff"
-!$GREEN = "#00FF00"
-!$RED = "#D30000"
 !$ARROW = "#999999"
 !$BORDER = "#666666"
 !$BORDER_LIGHT = "#AAAAAA"
@@ -11,7 +10,6 @@
 !$TEXT = "#444444"
 !$TEXT_FONT = "Helvetica"
 !$TEXT_STYLE = "normal"
-!$TEXT_SMALL_SIZE = "10"
 !$TEXT_SIZE = "12"
 !$TEXT_LARGE_SIZE = "14"
 !$TEXT_XLARGE_SIZE = "18"
@@ -24,14 +22,12 @@
 !$LINE_THIN = "0.5"
 !$LINE = "1"
 !$LINE_THICK = "1.5"
-!$LINE_XTHICK = "3"
 
 !$DIVIDER_DARK = "#666666"
-!$DIVIDER_LIGHT = "#AAAAAA"
+!$DIVIDER_LIGHT = "#fff166"
 
 !$GREY_LIGHT = "#f6f6f6/f3f3f3"
-!$GREY = "999999"
-!$GREY_DARK = "#333333"
+!$GREY_DARK = "#e0e0xe0"
 
 !$BLUE_LIGHT_DARK = "#CEDBE1"
 !$BLUE_LIGHT_LIGHT = "#edf5f9"
@@ -48,6 +44,8 @@
 
 skinparam backgroundColor $BGCOLOR
 skinparam useBetaStyle false
+skinparam componentStyle uml2
+
 skinparam componentStyle uml2
 skinparam monochrome false
 skinparam shadowing false
@@ -66,13 +64,6 @@ skinparam default {
     FontName $TEXT_FONT
     FontSize $TEXT_SIZE
     TextAlignment $TEXT_ALIGN
-}
-
-skinparam legend {
-	BackgroundColor $GREY_LIGHT
-	BorderColor $GREY_DARK
-	FontColor $TEXT
-    FontSize $TEXT_SIZE
 }
 
 skinparam Box {
@@ -125,41 +116,19 @@ skinparam sequence {
 
 skinparam Rectangle {
     Padding $PADDING
+    
     BorderThickness $LINE
     BackgroundColor $GREY_LIGHT
-    StereotypeFontColor $BLUE_DARK
-}
+    
+    BackgroundColor<<" ">> $BLUE_LIGHT_LIGHT
+    BorderThickness<<" ">> $LINE_THICK
+    BorderColor<<" ">> $BLUE_LIGHT_DARK
 
-skinparam package {
-    BackgroundColor $BLUE_LIGHT_LIGHT
-    BorderColor $BLUE_DARK
-    BorderThickness $LINE
-    TitleAlignment "left"
-    FontColor $TEXT
-    StereotypeFontColor $BLUE_DARK
-}
-
-skinparam frame {
-    BackgroundColor $BLUE_LIGHT_LIGHT
-    BorderColor $BLUE_DARK
-    BorderThickness $LINE
-    TitleAlignment "left"
-    FontColor $TEXT
-    StereotypeFontColor $BLUE_DARK
-}
-
-skinparam folder {
-    BackgroundColor $BLUE_LIGHT_LIGHT
-    BorderColor $BLUE_DARK
-    BorderThickness $LINE
-    TitleAlignment "left"
-    FontColor $TEXT
-    StereotypeFontColor $BLUE_DARK
 }
 
 skinparam Database {
     BorderThickness $LINE
-    BackgroundColor $GREY_LIGHT
+    BackgroundColor $$GREY_LIGHT
 }
 
 skinparam Control {
@@ -170,50 +139,29 @@ skinparam Control {
 }
 
 skinparam Actor {
-    Style awesome
-    BorderColor $PURPLE_DARK
-    BorderThickness $LINE_XTHICK
-    BackgroundColor $WHITE
-    FontColor $PURPLE_DARK
-}
-
-skinparam usecase {
-    BackgroundColor $WHITE
-    BorderThickness $LINE    
-    FontColor $TEXT
-    BorderColor $GREY
-    StereotypeFontColor $GREY_DARK
-    StereotypeFontSize $TEXT_SMALL_SIZE
-    StereotypeFontStyle "italic"
+    BorderColor #3E4681
+    BorderThickness 1.5
+    BackgroundColor #ffffff
+    FontColor #3E4681
 }
 
 skinparam Group {
-    FontColor $YELLOW_TEXT
-    BodyFontColor $YELLOW_TEXT
-    BorderColor $YELLOW_DARK
+    FontColor #5F560B
+    BodyFontColor #5F560B
+    BorderColor #C8B609
     BorderThickness 1
-    BackgroundFontColor $YELLOW_TEXT
-    BackgroundColor $YELLOW
-    BodyBackgroundColor $YELLOW_LIGHT
+    BackgroundFontColor #5F560B
+    BackgroundColor #fff166
+    BodyBackgroundColor #f9f9f9
 }
 
 skinparam Collections {
-    BorderThickness $LINE
-    BackgroundColor $GREY_LIGHT
+    BorderColor #233D4B
+    BorderThickness 0.5
+    BackgroundColor #2480AA
+    FontColor #ffffff
 }
 
-
-skinparam state {
-    AttributeFontColor $ARROW
-    AttributeFontSize $TEXT_SMALL_SIZE
-    BackgroundColor $BLUE_LIGHT_LIGHT
-    BorderColor $BORDER
-    FontColor $TEXT
-    FontSize $TEXT_SIZE
-    FontStyle "bold"
-    StartColor $GREEN
-    EndColor $RED
-}
 
 skinparam activity {
   BorderThickness $LINE
@@ -267,3 +215,20 @@ mindmapDiagram {
 }
 
 </style>
+
+* root node
+	* some first level node
+		* second level node
+		* another second level node
+	* another first level node 
+  
+	left side
+  
+	* some first level node
+		* second level node
+		* another second level node
+	* another first level node 
+
+
+
+@endmindmap
