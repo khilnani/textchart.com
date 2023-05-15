@@ -43,8 +43,9 @@ deactivate Web
 legend right
   = Legend
   ----
-  |= Color |= Type |
-  |<#FF0000>| Type A class |
-  |<#00FF00>| Type B class |
-  |<#0000FF>| Type C class |
+  |= Name |= Description |
+  | Web | Headless frontend |
+  | API | Application API |
+  | Auth | OAuth Identity |
+  | DB | Identity datastore |
 endlegend
