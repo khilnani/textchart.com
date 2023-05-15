@@ -14,7 +14,7 @@ package Restaurant {
     --
     Several separators are possible.
     ==
-    Like this
+    Like this"
   usecase "Pay for Food" as UC2
   usecase "Drink" as UC3
   usecase "Review" as UC4

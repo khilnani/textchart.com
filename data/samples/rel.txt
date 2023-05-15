@@ -1,0 +1,14 @@
+title Simple Object Relationship Diagram
+ 
+rectangle "User Info" as Info
+rectangle "Game App" as App
+rectangle "User Group" as Group
+rectangle "Sales Info" as Sales
+rectangle "Properties" as Property
+rectangle "User List" as List
+ 
+App "1" -- "0...*" Info
+App "1" -- "0...*" Sales
+App "1" -- "0...*" Group
+Group "1" -- "1" Property
+Group "1" -- "0..*" List
