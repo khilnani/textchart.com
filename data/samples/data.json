@@ -24,6 +24,10 @@
         "path": "data/samples/state.txt"
     },
     {
+        "label": "Class Diagram",
+        "path": "data/samples/class.txt"
+    },
+    {
         "label": "Component Diagram",
         "path": "data/samples/component.txt"
     },

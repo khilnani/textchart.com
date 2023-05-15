@@ -70,7 +70,7 @@ skinparam default {
 
 skinparam legend {
 	BackgroundColor $GREY_LIGHT
-	BorderColor $GREY_DARK
+	BorderColor $GREY
 	FontColor $TEXT
     FontSize $TEXT_SIZE
 }
@@ -155,6 +155,11 @@ skinparam folder {
     TitleAlignment "left"
     FontColor $TEXT
     StereotypeFontColor $BLUE_DARK
+}
+
+skinparam class {
+    BorderThickness $LINE
+    BackgroundColor $GREY_LIGHT
 }
 
 skinparam Database {
