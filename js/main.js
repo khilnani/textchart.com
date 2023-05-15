@@ -2,9 +2,9 @@
 
 var default_samples = 'data/samples/data.json';
 var api_url = 'https://api.textchart.com';
-//var server_url = "https://plantuml.textchart.com";
-var server_url = "https://www.plantuml.com/plantuml";
 
+var server_url = "https://www.plantuml.com/plantuml";
+//server_url = "http://127.0.0.1:8080/img/";
 
 var cm = undefined;
 var samples_list = undefined;
