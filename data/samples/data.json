@@ -1,10 +1,18 @@
 [
     {
-        "label": "Sequence Diagram",
+        "label": "Sequence Diagram - v1",
         "path": "data/samples/seq.txt"
     },
     {
-        "label": "Sequence Diagram - with Images",
+        "label": "Sequence Diagram - v2",
+        "path": "data/samples/seq2.txt"
+    },
+    {
+        "label": "Sequence Diagram - Multiple Scenarios",
+        "path": "data/samples/seq-multi.txt"
+    },
+    {
+        "label": "Sequence Diagram - With Images",
         "path": "data/samples/seq-images.txt"
     },
     {

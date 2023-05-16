@@ -1,0 +1,42 @@
+title "Sequence Diagram - Multiple Scenarios"
+
+actor "End User" as User
+box "\nClients" #F5FBEF
+    participant "Mobile\nApp" as Mobile
+    participant "Web\nApp" as Web
+end box
+box "\nAPI"
+    control "Auth\nAPI" as Auth
+    control "App\nAPIs" as API
+end box
+box "\nResources"
+    collections "S3\nStorage" as S3
+    database "Database" as DB
+end box
+box "\nThirdparty" #EFF2FB
+    control "Google\nAPI" as Google #CEECF5
+    control "AWS\nAPI" as AWS #FFFF00
+end box
+
+== User Launches Site ==
+
+User -> Web: Request page
+User <- Web: Home page
+
+== User Login ==
+
+User -> Web: Login
+
+Web -> Auth: Validate
+opt Success
+    Web <- Auth: Success message
+    Web -> API: Get data
+    API -> DB: Get data
+    API <- DB: Profile info
+    Web <- API: Profile info
+    User <- Web: Profile page
+end
+opt Failure
+    Web <- Auth: Error
+    User <- Web: Error page
+end

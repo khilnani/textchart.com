@@ -1,13 +1,19 @@
-title "Sequence Diagram - With Images"
+
+title "Sequence Diagram W/ Activations v2"
+caption Figure 1
+
+center footer Generated for demonstration
+
+autonumber
 
 box "\nFront-end\n"
-	participant "<img:http://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-24.png>\nUser" as User 
-	participant "<img:http://cdn1.iconfinder.com/data/icons/logotypes/32/chrome-24.png{scale=1}>\nWeb" as Web 
+	participant "User" as User 
+	participant "Web" as Web 
 end box
 box "\nBack-end\n"
-  participant "<img:http://cdn2.iconfinder.com/data/icons/business-process-1/512/api-24.png>\nAPI" as API 
-  participant "<img:http://cdn0.iconfinder.com/data/icons/Hosting_Icons/32/secure-server-px-png.png{scale=0.7}>\nAuth" as Auth 
-  participant "<img:http://cdn0.iconfinder.com/data/icons/small-n-flat/24/678113-database-24.png>\nDB" as DB 
+  participant "API" as API 
+  participant "Auth" as Auth 
+  participant "DB" as DB 
 end box
 
 User ->> Web: Request page
@@ -35,3 +41,12 @@ opt Failure
 end
 deactivate Auth
 deactivate Web
+
+legend right
+  = Legend
+  ----
+  * Web | Headless frontend
+  * API | Application API
+  * Auth | OAuth Identity
+  * DB | Identity datastore
+endlegend
