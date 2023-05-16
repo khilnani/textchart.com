@@ -4,6 +4,8 @@ caption Figure 1
 
 center footer Generated for demonstration
 
+autonumber
+
 box "\nFront-end\n"
 	participant "User" as User 
 	participant "Web" as Web 

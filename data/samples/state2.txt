@@ -1,0 +1,30 @@
+
+title **State Diagram**
+
+note "This is a floating note" as N1
+
+state start1  <<start>>
+state choice1 <<choice>>
+state fork1   <<fork>>
+state join2   <<join>>
+state end3    <<end>>
+state State2 {
+state "Accumulate Enough Data\nLong State Name" as long1
+	long1 : Just a test
+}
+
+[*]     --> choice1 : from start\nto choice
+start1  --> choice1 : from start stereo\nto choice
+
+choice1 --> fork1   : from choice\nto fork
+choice1 --> join2   : from choice\nto join
+choice1 --> end3    : from choice\nto end stereo
+
+fork1   ---> State1 : from fork\nto state
+fork1   --> State2  : from fork\nto state
+
+State2  --> join2   : from state\nto join
+note left of State2 : this is a short\nnote
+State1  --> [*]     : from state\nto end
+
+join2   --> [*]     : from join\nto end

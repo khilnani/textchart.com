@@ -1,14 +1,18 @@
 @startmindmap
+
+title Mindmap - Syntax A
+
 * root node
-	* some first level node
-		* second level node
-		* another second level node
-	* another first level node 
+	* some first level
+		* second level
+		* another level
+	* another first level 
   
 	left side
   
-	* some first level node
-		* second level node
-		* another second level node
-	* another first level node 
+	* some first level
+		* second level
+		* another level
+	* another first level 
+	
 @endmindmap

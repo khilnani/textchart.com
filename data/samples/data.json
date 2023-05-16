@@ -1,10 +1,10 @@
 [
     {
-        "label": "Auth Sequence Diagram",
+        "label": "Sequence Diagram",
         "path": "data/samples/seq.txt"
     },
     {
-        "label": "Auth Sequence Diagram with Images",
+        "label": "Sequence Diagram - with Images",
         "path": "data/samples/seq-images.txt"
     },
     {
@@ -16,12 +16,20 @@
         "path": "data/samples/chatbot.txt"
     },
     {
-        "label": "Flow Diagram",
+        "label": "Flow Diagram - v1",
         "path": "data/samples/flow.txt"
     },
     {
-        "label": "State Diagram",
+        "label": "Flow Diagram v2",
+        "path": "data/samples/flow2.txt"
+    },
+    {
+        "label": "State Diagram - v1",
         "path": "data/samples/state.txt"
+    },
+    {
+        "label": "State Diagram - v2",
+        "path": "data/samples/state2.txt"
     },
     {
         "label": "Class Diagram",
@@ -52,7 +60,15 @@
         "path": "data/samples/usecase2.txt"
     },
     {
-        "label": "Mindmap",
+        "label": "Json Data",
+        "path": "data/samples/json.txt"
+    },
+    {
+        "label": "Mindmap - v1",
         "path": "data/samples/mindmap.txt"
+    },
+    {
+        "label": "Mindmap - v2",
+        "path": "data/samples/mindmap2.txt"
     }
 ]
