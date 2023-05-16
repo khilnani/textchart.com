@@ -1,39 +1,15 @@
-title Class Diagram Example
+title Entity Diagrams
 
-class Vehicle {
-	speed
-    direction
-	make
-    model
-	run()
-}
-class Car {
-    driver_name
-    road
-	run()
-}
-class Plane {
-    pilot_name
-    altitude
-	run()
-}
-class Ship {
-    captain_name
-    ocean
-	run()
-}
-Vehicle <|-- Car
-Vehicle <|-- Plane : inherits
-Vehicle <|-- Shiptitle Class Diagram Example
 
 ' Version 1 - Simple
+
 
 CUSTOMER ||--|| ORDER : places
 ORDER ||--|{ LINEITEM : contains
 CUSTOMER }|..|{ DELIVERYADDRESS : uses
 
 
-' Version 2 - with more details
+' Version 2
 
 class Vehicle {
 	speed

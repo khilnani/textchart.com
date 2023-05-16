@@ -40,12 +40,12 @@
         "path": "data/samples/state2.txt"
     },
     {
-        "label": "Class Diagram",
-        "path": "data/samples/class.txt"
+        "label": "Simple Relationship Diagram",
+        "path": "data/samples/rel.txt"
     },
     {
-        "label": "Object Relationship Diagram",
-        "path": "data/samples/rel.txt"
+        "label": "Entity/Class Diagrams",
+        "path": "data/samples/class.txt"
     },
     {
         "label": "Component Diagram",
