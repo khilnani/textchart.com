@@ -1,4 +1,15 @@
-@startmindmap
+''
+'' Nik'S Default test theme
+''
+'' Author: Nik Khilnani
+'' Copyright (c) 2023 by Nik Khilnani
+
+!$THEME = "test"
+
+!if %not(%variable_exists("$BGCOLOR"))
+!$BGCOLOR = "transparent"
+!endif
+
 
 !$BGCOLOR = "transparent"
 
@@ -216,19 +227,3 @@ mindmapDiagram {
 
 </style>
 
-* root node
-	* some first level node
-		* second level node
-		* another second level node
-	* another first level node 
-  
-	left side
-  
-	* some first level node
-		* second level node
-		* another second level node
-	* another first level node 
-
-
-
-@endmindmap
