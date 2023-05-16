@@ -3,6 +3,29 @@
 <style>
 wbsDiagram {
   Linecolor black
+  Padding 12
+  Margin 10
+  LineThickness 1.0
+  
+  node {
+    RoundCorner 10
+    HorizontalAlignment center
+    MaximumWidth 100
+  }
+  rootNode {
+    LineStyle 8.0;3.0
+    LineColor red
+    BackgroundColor white
+    LineThickness 1.0
+    RoundCorner 0
+    Shadowing 0.0
+  }
+  leafNode {
+    Padding 3
+  }
+  legend {
+    RoundCorner 10
+  }
   arrow {
     LineColor green
   }
@@ -15,17 +38,18 @@ wbsDiagram {
      BackgroundColor Red
      FontColor White
      RoundCorner 10
+     LineStyle 4
  }
 }
 </style>
 
 title "A WBS based Hierarchy"
 
-caption "Perhaps useful to display hierarchical information"
+caption "This example includes a variety of formatting options that are optional"
 
 * World
 ** America
-***< USA
+***[#SkyBlue]< United States\nof America
 *** Canada
 *** Mexico <<mexicoStyle>>
 ** Europe
@@ -34,6 +58,7 @@ caption "Perhaps useful to display hierarchical information"
 *** France
 ***< Spain
 ***< Portugal
+***_< ...
 
 legend
   Legend
@@ -41,5 +66,7 @@ legend
 end legend
 
 footer "The map is quite incomplete"
+
+
 
 @endwbs
