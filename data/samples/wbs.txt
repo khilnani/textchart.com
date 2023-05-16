@@ -47,7 +47,7 @@ caption "This example includes a variety of formatting options that are optional
 
 * World
 ** America
-***[#SkyBlue]< United States\nof America
+***[#SkyBlue]< United States of <color:#aa0000>America
 *** Canada
 *** Mexico 
 ** Europe
