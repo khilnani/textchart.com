@@ -267,19 +267,7 @@ skinparam partition {
 
 <style>
 
-wbsDiagram {
-  node {
-    RoundCorner 10
-    HorizontalAlignment center
-    MaximumWidth 100
-  }
-  rootNode {
-    LineStyle 2
-  }
-}
-
-
-mindmapDiagram {
+wbsDiagram, mindmapDiagram {
   Padding $PADDING
   Margin $MARGIN
   LineThickness $LINE
@@ -295,8 +283,11 @@ mindmapDiagram {
     BackgroundColor $BLUE_LIGHT_LIGHT
     Roundcorner $CORNER_RADIUS
     MaximumWidth 100
-	FontColor $TEXT
-	FontStyle $TEXT_STYLE
+    FontColor $TEXT
+    FontStyle $TEXT_STYLE
+  }
+  rootNode {
+    LineStyle 2
   }
 }
 
