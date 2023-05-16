@@ -67,6 +67,4 @@ end legend
 
 footer "The map is quite incomplete"
 
-
-
 @endwbs
