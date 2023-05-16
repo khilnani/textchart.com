@@ -28,7 +28,7 @@
         "path": "data/samples/flow.txt"
     },
     {
-        "label": "Flow Diagram v2",
+        "label": "Flow Diagram - v2",
         "path": "data/samples/flow2.txt"
     },
     {
@@ -68,15 +68,15 @@
         "path": "data/samples/usecase2.txt"
     },
     {
-        "label": "Json Data",
-        "path": "data/samples/json.txt"
-    },
-    {
         "label": "Mindmap - v1",
         "path": "data/samples/mindmap.txt"
     },
     {
         "label": "Mindmap - v2",
         "path": "data/samples/mindmap2.txt"
+    },
+    {
+        "label": "Json Data",
+        "path": "data/samples/json.txt"
     }
 ]
