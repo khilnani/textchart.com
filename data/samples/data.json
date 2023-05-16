@@ -8,11 +8,11 @@
         "path": "data/samples/seq2.txt"
     },
     {
-        "label": "Sequence Diagram - Multiple Scenarios",
+        "label": "Sequence Diagram - Scenarios",
         "path": "data/samples/seq-multi.txt"
     },
     {
-        "label": "Sequence Diagram - With Images",
+        "label": "Sequence Diagram - Images",
         "path": "data/samples/seq-images.txt"
     },
     {
@@ -52,11 +52,11 @@
         "path": "data/samples/component.txt"
     },
     {
-        "label": "Deployment/System Architecture",
+        "label": "System Architecture",
         "path": "data/samples/deployment.txt"
     },
     {
-        "label": "Deployment/System - Elements",
+        "label": "System - Elements",
         "path": "data/samples/deployment-elements.txt"
     },
     {
