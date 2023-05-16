@@ -34,9 +34,7 @@ wbsDiagram {
       RoundCorner 10
       LineColor red
   }
- .mexicoStyle * {
-     BackgroundColor Red
-     FontColor White
+ .ukStyle * {
      RoundCorner 10
      LineStyle 4
  }
@@ -51,9 +49,9 @@ caption "This example includes a variety of formatting options that are optional
 ** America
 ***[#SkyBlue]< United States\nof America
 *** Canada
-*** Mexico <<mexicoStyle>>
+*** Mexico 
 ** Europe
-*** England
+*** England <<ukStyle>>
 *** Germany
 *** France
 ***< Spain
