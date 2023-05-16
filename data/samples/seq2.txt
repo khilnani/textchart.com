@@ -1,5 +1,8 @@
 
-title "Sequence Diagram W/ Activations v2"
+
+title "Sequence Diagram - v2 with Activations"
+
+
 caption Figure 1
 
 center footer Generated for demonstration
