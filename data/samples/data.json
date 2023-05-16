@@ -68,6 +68,10 @@
         "path": "data/samples/usecase2.txt"
     },
     {
+        "label": "Work Breakdown / Hierarchy",
+        "path": "data/samples/wbs.txt"
+    },
+    {
         "label": "Mindmap - v1",
         "path": "data/samples/mindmap.txt"
     },
