@@ -1,0 +1,45 @@
+@startwbs
+
+<style>
+wbsDiagram {
+  Linecolor black
+  arrow {
+    LineColor green
+  }
+  :depth(1) {
+      BackgroundColor White
+      RoundCorner 10
+      LineColor red
+  }
+ .mexicoStyle * {
+     BackgroundColor Red
+     FontColor White
+     RoundCorner 10
+ }
+}
+</style>
+
+title "A WBS based Hierarchy"
+
+caption "Perhaps useful to display hierarchical information"
+
+* World
+** America
+***< USA
+*** Canada
+*** Mexico <<mexicoStyle>>
+** Europe
+*** England
+*** Germany
+*** France
+***< Spain
+***< Portugal
+
+legend
+  Legend
+  * Aren't we all
+end legend
+
+footer "The map is quite incomplete"
+
+@endwbs
