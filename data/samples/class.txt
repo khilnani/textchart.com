@@ -1,8 +1,6 @@
-title Entity Diagrams
-
+title Entity/Class Diagrams
 
 ' Version 1 - Simple
-
 
 CUSTOMER ||--|| ORDER : places
 ORDER ||--|{ LINEITEM : contains
@@ -36,5 +34,3 @@ class Ship {
 Vehicle <|-- Car
 Vehicle <|-- Plane : inherits
 Vehicle <|-- Ship
-
-

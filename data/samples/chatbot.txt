@@ -1,4 +1,3 @@
-
 left to right direction
 
 title **ChatBot High-Level Architecture**\n\nThis diagram shows the basic steps of how a bot app responds to a message
@@ -19,4 +18,3 @@ trk -down-> plcy: **3**
 plcy -left-> act: **4**
 act -right-> trk: **5**
 act -up-> out: **6**
-

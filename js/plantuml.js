@@ -81,12 +81,14 @@ function done_deflating(e) {
 
     var img_url = server_url + '/svg/' + data;
     var txt_url = server_url + '/txt/' + data;
+    var png_url = server_url + '/img/' + data;
 
     var curr_img_url = $('#uml_img').attr('src');
 
     if( curr_img_url != img_url) {
         $('#uml_img').attr('src', img_url);
         $('#uml_link').attr('href', txt_url);
+        $('#png_link').attr('href', png_url);
         console.log('PlantUML: Images and Text Updated');
 
     } else {

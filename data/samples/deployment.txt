@@ -1,4 +1,3 @@
-
 package "Acme IT Services" <<test>> {
     rectangle "Application Suites" as apps #fff {
         rectangle ERP 
