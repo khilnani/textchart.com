@@ -1,119 +1,291 @@
+''
+'' Nik'S Default theme
+''
+'' Author: Nik Khilnani
+'' Copyright (c) 2023 by Nik Khilnani
 
 !$THEME = "default"
 
+!if %not(%variable_exists("$BGCOLOR"))
+!$BGCOLOR = "transparent"
+!endif
 
+!$BLACK = "#111111"
+!$WHITE = "#fff"
+!$GREEN = "#00FF00"
+!$RED = "#D30000"
+!$ARROW = "#999999"
+!$BORDER = "#666666"
+!$BORDER_LIGHT = "#AAAAAA"
 
-' left to right direction
-' top to bottom direction
+!$TEXT = "#444444"
+!$TEXT_FONT = "Helvetica"
+!$TEXT_STYLE = "normal"
+!$TEXT_SMALL_SIZE = "10"
+!$TEXT_SIZE = "12"
+!$TEXT_LARGE_SIZE = "14"
+!$TEXT_XLARGE_SIZE = "18"
+!$TEXT_ALIGN = "center"
 
+!$MARGIN = "8"
+!$PADDING = "10"
+!$CORNER_RADIUS = "10"
+
+!$LINE_THIN = "0.5"
+!$LINE = "1"
+!$LINE_THICK = "1.5"
+!$LINE_XTHICK = "3"
+
+!$DIVIDER_DARK = "#666666"
+!$DIVIDER_LIGHT = "#AAAAAA"
+
+!$GREY_LIGHT = "#f6f6f6/f3f3f3"
+!$GREY = "999999"
+!$GREY_DARK = "#333333"
+
+!$BLUE_LIGHT_DARK = "#CEDBE1"
+!$BLUE_LIGHT_LIGHT = "#edf5f9"
+
+!$YELLOW_TEXT = "#5F560B"
+!$YELLOW_DARK = "#C8B609"
+!$YELLOW = "#fff166"
+!$YELLOW_LIGHT = "#f9f9f9"
+
+!$PURPLE_DARK = "#3E4681"
+
+!$BLUE_DARK = "#6998B5"
+!$BLUE_LIGHT = "#A9CCE3"
+
+skinparam backgroundColor $BGCOLOR
+skinparam useBetaStyle false
 skinparam componentStyle uml2
 skinparam monochrome false
 skinparam shadowing false
-skinparam backgroundColor #ffffff
-skinparam roundCorner 7
+skinparam roundCorner $CORNER_RADIUS
 
 skinparam Arrow {
-    Color #999999
+    Color $ARROW
+    Thickness $LINE
+    ArrowMessageAlign center
 }
 
 skinparam default {
-    BorderColor #666666
-    FontColor #444444
-    FontName Helvetica
-    FontSize 12
-    TextAlignment center
+    BorderColor $BORDER
+    FontColor $TEXT
+    FontName $TEXT_FONT
+    FontSize $TEXT_SIZE
+    TextAlignment $TEXT_ALIGN
+}
+
+skinparam legend {
+	BackgroundColor $GREY_LIGHT
+	BorderColor $GREY
+	FontColor $TEXT
+    FontSize $TEXT_SIZE
 }
 
 skinparam Box {
-    Padding 10
-    BorderThickness 0.5
-    BorderColor #CEDBE1
-    BackgroundColor #edf5f9
+    Padding $PADDING
+    BorderThickness $LINE
+    BorderColor $BLUE_LIGHT_DARK
+    BackgroundColor $BLUE_LIGHT_LIGHT
 }
 
 skinparam Note {
-    FontColor #5F560B
-    BorderColor #C8B609
-    BackgroundColor #fff166
-    BorderThickness 1
-}
-
-skinparam Database {
-    BorderColor #202758
-    BorderThickness 0.4
-    BackgroundColor #D7D0F6
-    FontColor #202758
-}
-
-skinparam Control {
-    BorderColor #28451F
-    BorderThickness 1
-    BackgroundColor #C5E5BB
-    FontColor #000000
-}
-
-skinparam Actor {
-    BorderColor #3E4681
-    BorderThickness 1.5
-    BackgroundColor #ffffff
-    FontColor #3E4681
-}
-
-skinparam Rectangle {
-    Padding 20
-    BorderThickness 0.5
-    FontColor #1D234E
-    BackgroundColor #C1C6EC
-    BorderColor #202758
+    FontColor $YELLOW_TEXT
+    BorderThickness $LINE
+    BorderColor $YELLOW_DARK
+    BackgroundColor $YELLOW
 }
 
 skinparam Participant {
     Padding 20
-    BorderThickness 1.5
-    FontColor #3E4681
-    BackgroundColor #ffffff
-    BorderColor #3E4681
-}
-
-skinparam Group {
-    FontColor #5F560B
-    BodyFontColor #5F560B
-    BorderColor #C8B609
-    BorderThickness 1
-    BackgroundFontColor #5F560B
-    BackgroundColor #fff166
-    BodyBackgroundColor #f9f9f9
-}
-
-skinparam Collections {
-    BorderColor #233D4B
-    BorderThickness 0.5
-    BackgroundColor #2480AA
-    FontColor #ffffff
+    BorderThickness $LINE_THICK
+    FontColor $PURPLE_DARK
+    BackgroundColor $WHITE
+    BorderColor $PURPLE_DARK 
 }
 
 skinparam sequence {
 
-    ArrowColor #999999
+    ArrowColor $ARROW
 
-    LifeLineBorderColor #6998B5
-    LifeLineBorderThickness 1
-    LifeLineBackgroundColor #A9CCE3
+    LifeLineBorderThickness $LINE
+    LifeLineBorderColor $BLUE_DARK
+    LifeLineBackgroundColor $BLUE_LIGHT
     
-    BoxPadding 10
-    BoxBorderThickness 0.5
-    BoxBorderColor #CEDBE1
-    BoxBackgroundColor #edf5f9
+    BoxPadding $PADDING
+    BoxBorderThickness $LINE
+    BoxBorderColor $BLUE_LIGHT_DARK
+    BoxBackgroundColor $BLUE_LIGHT_LIGHT
 
-    DividerBorderColor #666666
-    DividerBorderThickness 0.7px
-    DividerBackgroundColor #fff166
+    DividerBorderColor $DIVIDER_DARK
+    DividerBorderThickness $LINE
+    DividerBackgroundColor $DIVIDER_LIGHT
     
-    GroupFontColor #5F560B
-    GroupBodyFontColor #5F560B
-    GroupBorderColor #C8B609
-    GroupBorderThickness 1
-    GroupBackgroundFontColor #5F560B
-    GroupBackgroundColor #fff166
-    GroupBodyBackgroundColor #f9f9f9
+    GroupBorderColor $YELLOW_DARK
+    GroupBorderThickness $LINE
+    GroupBackgroundFontColor $YELLOW_TEXT
+    GroupBackgroundColor $YELLOW
+    
+    GroupBodyFontColor $YELLOW_DARK
+    GroupBodyBackgroundColor $YELLOW_LIGHT
 }
+
+skinparam Rectangle {
+    Padding $PADDING
+    BorderThickness $LINE
+    BackgroundColor $GREY_LIGHT
+    StereotypeFontColor $BLUE_DARK
+}
+
+skinparam package {
+    BackgroundColor $BLUE_LIGHT_LIGHT
+    BorderColor $BLUE_DARK
+    BorderThickness $LINE
+    TitleAlignment "left"
+    FontColor $TEXT
+    StereotypeFontColor $BLUE_DARK
+}
+
+skinparam frame {
+    BackgroundColor $BLUE_LIGHT_LIGHT
+    BorderColor $BLUE_DARK
+    BorderThickness $LINE
+    TitleAlignment "left"
+    FontColor $TEXT
+    StereotypeFontColor $BLUE_DARK
+}
+
+skinparam folder {
+    BackgroundColor $BLUE_LIGHT_LIGHT
+    BorderColor $BLUE_DARK
+    BorderThickness $LINE
+    TitleAlignment "left"
+    FontColor $TEXT
+    StereotypeFontColor $BLUE_DARK
+}
+
+skinparam class {
+    BorderThickness $LINE
+    BackgroundColor $GREY_LIGHT
+}
+
+skinparam Database {
+    BorderThickness $LINE
+    BackgroundColor $GREY_LIGHT
+}
+
+skinparam Control {
+    BorderThickness $LINE
+    BackgroundColor $GREY_LIGHT
+}
+
+skinparam Entity {
+    BorderThickness $LINE
+    BackgroundColor $GREY_LIGHT
+}
+
+skinparam Boundary {
+    BorderThickness $LINE
+    BackgroundColor $GREY_LIGHT
+}
+
+skinparam Actor {
+    Style awesome
+    BorderColor $PURPLE_DARK
+    BorderThickness $LINE_XTHICK
+    BackgroundColor $WHITE
+    FontColor $PURPLE_DARK
+}
+
+skinparam usecase {
+    BackgroundColor $WHITE
+    BorderThickness $LINE    
+    FontColor $TEXT
+    BorderColor $GREY
+    StereotypeFontColor $GREY_DARK
+    StereotypeFontSize $TEXT_SMALL_SIZE
+    StereotypeFontStyle "italic"
+}
+
+skinparam Group {
+    FontColor $YELLOW_TEXT
+    BodyFontColor $YELLOW_TEXT
+    BorderColor $YELLOW_DARK
+    BorderThickness 1
+    BackgroundFontColor $YELLOW_TEXT
+    BackgroundColor $YELLOW
+    BodyBackgroundColor $YELLOW_LIGHT
+}
+
+skinparam Collections {
+    BorderThickness $LINE
+    BackgroundColor $GREY_LIGHT
+}
+
+
+skinparam state {
+    AttributeFontColor $ARROW
+    AttributeFontSize $TEXT_SMALL_SIZE
+    BackgroundColor $BLUE_LIGHT_LIGHT
+    BorderColor $BORDER
+    FontColor $TEXT
+    FontSize $TEXT_SIZE
+    FontStyle "bold"
+    StartColor $GREEN
+    EndColor $RED
+}
+
+skinparam activity {
+  BorderThickness $LINE
+  BorderColor $BLUE_DARK
+  BackgroundColor $BLUE_LIGHT
+  BarColor $ARROW
+}
+
+skinparam activityDiamond {
+    BackgroundColor $YELLOW_LIGHT
+    BorderColor $YELLOW_DARK
+    FontSize $TEXT_LARGE_SIZE
+}
+
+skinparam swimlane {
+	BorderColor $BORDER_LIGHT
+  BorderThickness $LINE_THIN
+  TitleFontSize $TEXT_XLARGE_SIZE
+  TitleBackgroundColor $WHITE
+  TitleFontStyle "bold"
+}
+
+skinparam partition {
+  BorderThickness $LINE_THIN
+	BorderColor $BLUE_DARK
+	FontColor $BLUE_DARK
+	BackgroundColor $BLUE_LIGHT_LIGHT
+}
+
+<style>
+
+mindmapDiagram {
+  Padding $PADDING
+  Margin $MARGIN
+  LineThickness $LINE
+  FontColor $TEXT
+  LineColor $ARROW
+  Roundcorner $CORNER_RADIUS
+  node {
+    Padding $PADDING
+    Margin $MARGIN
+    HorizontalAlignment $TEXT_ALIGN
+    LineColor $BORDER
+    LineThickness $LINE
+    BackgroundColor $BLUE_LIGHT_LIGHT
+    Roundcorner $CORNER_RADIUS
+    MaximumWidth 100
+	FontColor $TEXT
+	FontStyle $TEXT_STYLE
+  }
+}
+
+</style>
