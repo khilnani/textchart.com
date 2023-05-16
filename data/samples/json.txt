@@ -1,5 +1,7 @@
 @startjson
 
+!theme default from https://textchart.com/themes/
+
 title JSON Diagram
 
 {

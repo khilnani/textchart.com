@@ -72,6 +72,10 @@
         "path": "data/samples/wbs.txt"
     },
     {
+        "label": "Work Breakdown - Formatting",
+        "path": "data/samples/wbs2.txt"
+    },
+    {
         "label": "Mindmap - v1",
         "path": "data/samples/mindmap.txt"
     },

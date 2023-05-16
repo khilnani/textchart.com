@@ -1,53 +1,12 @@
 @startwbs
 
-<style>
-wbsDiagram {
-  Linecolor black
-  Padding 12
-  Margin 10
-  LineThickness 1.0
-  
-  node {
-    RoundCorner 10
-    HorizontalAlignment center
-    MaximumWidth 100
-  }
-  rootNode {
-    LineStyle 8.0;3.0
-    LineColor red
-    BackgroundColor white
-    LineThickness 1.0
-    RoundCorner 0
-    Shadowing 0.0
-  }
-  leafNode {
-    Padding 3
-  }
-  legend {
-    RoundCorner 10
-  }
-  arrow {
-    LineColor green
-  }
-  :depth(1) {
-      BackgroundColor White
-      RoundCorner 10
-      LineColor red
-  }
- .ukStyle * {
-     RoundCorner 10
-     LineStyle 4
- }
-}
-</style>
+!theme default from https://textchart.com/themes/
 
-title "A WBS based Hierarchy"
-
-caption "This example includes a variety of formatting options that are optional"
+title "A simple WBS based Hierarchy"
 
 * World
 ** America
-***[#SkyBlue]< United States of <color:#aa0000>America
+***[#SkyBlue]< United States of America
 *** Canada
 *** Mexico 
 ** Europe

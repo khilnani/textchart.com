@@ -1,5 +1,7 @@
 @startmindmap
 
+!theme default from https://textchart.com/themes/
+
 title Mindmap - Syntax A
 
 * root node
